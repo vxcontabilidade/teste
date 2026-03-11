@@ -1,378 +1,416 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Contabilidade em São Gonçalo | MEI e Simples Nacional</title>
+<title>Contador em São Gonçalo | MEI e Simples Nacional | VX Contabilidade</title>
 
-<meta name="description" content="VX Contabilidade em São Gonçalo. Especialista em MEI, Simples Nacional, imposto de renda e cálculos trabalhistas.">
+<meta name="description" content="VX Contabilidade em São Gonçalo: serviços de contabilidade para MEI, Simples Nacional, cálculos trabalhistas, imposto de renda e regularização de débitos tributários.">
+
+<meta name="keywords" content="Contador, Assessoria Contábil, contabilidade Niterói, contabilidade São Gonçalo, contabilidade Rio de Janeiro, Abrir MEI São Gonçalo">
+
 <meta name="robots" content="index, follow">
-<meta name="author" content="VX Contabilidade">
-
-<meta name="geo.region" content="BR-RJ">
-<meta name="geo.placename" content="São Gonçalo">
-<meta name="geo.position" content="-22.8266;-43.0634">
-<meta name="ICBM" content="-22.8266, -43.0634">
 
 <link rel="canonical" href="https://www.vxcontabilidade.com.br">
 
-<link rel="icon" href="favicon.ico">
+<link rel="preload" href="vxlogo.png" as="image">
+
+<meta property="og:title" content="VX Contabilidade em São Gonçalo">
+<meta property="og:description" content="Serviços de contabilidade para MEI e Simples Nacional em São Gonçalo e Niterói.">
+<meta property="og:image" content="https://www.vxcontabilidade.com.br/vxlogo.png">
+<meta property="og:url" content="https://www.vxcontabilidade.com.br">
+<meta property="og:type" content="website">
+
+<link rel="icon" href="/genfavicon-32.png" sizes="32x32">
+<link rel="icon" href="/genfavicon-16.png" sizes="16x16">
+
+<script defer src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
 
-body{
-line-height:1.6;
-color:#333;
-}
+body{line-height:1.6;color:#333;display:flex;flex-direction:column;align-items:center;min-height:100vh}
 
-.container{
-max-width:1200px;
-margin:auto;
-padding:20px;
-}
+/* HEADER */
 
-header{
+.header{
 background:#2c7873;
-color:white;
-padding:15px;
-position:sticky;
-top:0;
-z-index:1000;
-}
-
-.header-container{
+padding:15px 20px;
 display:flex;
+align-items:center;
 justify-content:space-between;
-align-items:center;
-max-width:1200px;
-margin:auto;
-}
-
-.logo{
-font-size:22px;
-font-weight:bold;
-color:#f7e8a0;
-}
-
-nav a{
-color:#f7e8a0;
-margin-left:20px;
-text-decoration:none;
-font-size:16px;
-}
-
-.hero{
-text-align:center;
-padding:60px 20px;
-background:#f5f5f5;
-}
-
-.hero h1{
-font-size:36px;
-margin-bottom:20px;
-}
-
-.hero h2{
-font-size:22px;
-font-weight:normal;
-}
-
-.section-title{
-text-align:center;
-font-size:28px;
-margin:50px 0 20px;
-color:#2c7873;
-}
-
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-}
-
-.service{
-text-align:center;
-padding:20px;
-border:1px solid #ddd;
-border-radius:8px;
-}
-
-.service img{
-max-width:200px;
-margin-bottom:15px;
-}
-
-.about{
-display:flex;
-flex-wrap:wrap;
-gap:30px;
-align-items:center;
-}
-
-.about img{
-max-width:300px;
-width:100%;
-}
-
-.about-text{
-flex:1;
-min-width:250px;
-}
-
-.contact-form{
-max-width:600px;
-margin:auto;
-display:flex;
-flex-direction:column;
-gap:10px;
-}
-
-.contact-form input,
-.contact-form textarea{
-padding:10px;
-border:1px solid #ccc;
-border-radius:4px;
-}
-
-.contact-form button{
-background:#2c7873;
-color:white;
-border:none;
-padding:12px;
-cursor:pointer;
-}
-
-.map iframe{
-width:100%;
-height:350px;
-border:0;
-}
-
-footer{
-background:#2c7873;
-color:#f7e8a0;
-text-align:center;
-padding:20px;
-margin-top:40px;
-}
-
-.whatsapp{
 position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
+width:100%;
+top:0;
+z-index:1000
+}
+
+.site-name{color:#f7e8a0;font-size:24px;font-weight:bold}
+
+.logo img{height:50px}
+
+.nav-menu{display:flex;gap:20px}
+
+.nav-menu a{color:#f7e8a0;text-decoration:none;font-size:18px}
+
+.nav-menu a:hover{text-decoration:underline}
+
+/* HERO */
+
+.main-content{padding:20px;width:100%;max-width:1200px;margin-top:80px}
+
+.hero-carousel{display:flex;transition:transform .5s ease}
+
+.hero-carousel img{width:33.33%;flex-shrink:0}
+
+/* TITLES */
+
+.title{text-align:center;font-size:36px;margin:40px 0}
+
+.subtitle{text-align:center;font-size:24px;margin-bottom:20px}
+
+/* CTA MEI */
+
+.cta-mei{
+text-align:center;
+margin-bottom:20px
+}
+
+.cta-mei a{
+background:#2c7873;
+color:#f7e8a0;
+padding:15px 30px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+font-size:20px
+}
+
+/* PROMO BUTTON */
+
+.promo-button{
+background:#2c7873;
+color:#f7e8a0;
+padding:12px 24px;
+font-size:18px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+display:block;
+margin:20px auto
+}
+
+/* HONORARIOS */
+
+.tabela-honorarios{text-align:center;margin:30px}
+
+.tabela-honorarios a{
+background:#2c7873;
+color:#f7e8a0;
+padding:14px 28px;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold
+}
+
+/* SERVICOS GRID */
+
+.image-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px
+}
+
+.image-card{text-align:center}
+
+.image-card img{width:100%;max-width:300px}
+
+/* PROMOÇÕES */
+
+.promocao-card{
+text-align:center;
+border:1px solid #ccc;
+border-radius:8px;
+padding:20px
+}
+
+.promocao-card img{
+display:block;
+margin:auto;
+width:100%;
+max-width:500px
+}
+
+/* WHATSAPP FLOAT */
+
+.whatsapp-float{
+position:fixed;
 width:60px;
 height:60px;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:30px;
-text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,0.3);
+bottom:25px;
+right:25px;
+z-index:2000
 }
 
-.faq{
-max-width:800px;
-margin:auto;
-}
+.whatsapp-float img{width:60px}
 
-.faq h3{
-margin-top:20px;
-color:#2c7873;
-}
+/* MAP */
 
-@media(max-width:768px){
+.map iframe{width:100%;max-width:600px;height:400px;border:0}
 
-.hero h1{
-font-size:28px;
-}
+/* FOOTER */
 
-.hero h2{
-font-size:18px;
-}
-
-nav{
-display:none;
-}
-
+.footer{
+background:#2c7873;
+color:#f7e8a0;
+text-align:center;
+padding:20px;
+width:100%
 }
 
 </style>
-
 </head>
 
 <body>
 
-<header>
+<header class="header">
 
-<div class="header-container">
+<div class="site-name">VX Contabilidade</div>
 
-<div class="logo">VX Contabilidade</div>
-
-<nav>
-
-<a href="#inicio">Início</a>
-<a href="#servicos">Serviços</a>
-<a href="#sobre">Sobre</a>
-<a href="#contato">Contato</a>
-
-</nav>
-
+<div class="logo">
+<img src="vxlogo.png" alt="VX Contabilidade">
 </div>
+
+<nav class="nav-menu">
+<a href="#inicio" onclick="showSection('inicio')">Início</a>
+<a href="#servicos" onclick="showSection('servicos')">Serviços</a>
+<a href="#promocoes" onclick="showSection('promocoes')">Promoções</a>
+<a href="#sobre" onclick="showSection('sobre')">Sobre</a>
+<a href="#contato" onclick="showSection('contato')">Contato</a>
+</nav>
 
 </header>
 
+<main class="main-content">
 
-<section class="hero" id="inicio">
+<section id="inicio">
 
-<h1>Contabilidade para MEI e Simples Nacional</h1>
+<div class="hero-carousel" id="hero-carousel">
 
-<h2>Serviços contábeis eficientes para o crescimento da sua empresa</h2>
-
-</section>
-
-
-<section class="container" id="servicos">
-
-<h2 class="section-title">Serviços</h2>
-
-<div class="services">
-
-<div class="service">
-<img src="IMAGEM B.png">
-<h3>Abertura de MEI</h3>
-<p>Abertura de MEI gratuita com orientação completa.</p>
-</div>
-
-<div class="service">
-<img src="IMAGEM C.png">
-<h3>Gestão de DAS</h3>
-<p>Controle de DAS mensal e entrega da DASN-SIMEI.</p>
-</div>
-
-<div class="service">
-<img src="IMAGEM D.png">
-<h3>Simples Nacional</h3>
-<p>Contabilidade completa para empresas do Simples.</p>
-</div>
-
-<div class="service">
-<img src="IMAGEM E.png">
-<h3>Imposto de Renda</h3>
-<p>Declaração de IR para pessoa física e MEI.</p>
-</div>
-
-<div class="service">
-<img src="IMAGEM G.png">
-<h3>Cálculos Trabalhistas</h3>
-<p>Cálculos de rescisões, horas extras e perícias.</p>
-</div>
-
-<div class="service">
-<img src="IMAGEM I.png">
-<h3>BPO Financeiro</h3>
-<p>Gestão financeira completa para pequenas empresas.</p>
-</div>
+<img src="IMAGEM AA.png">
+<img src="IMAGEM AB.png">
+<img src="IMAGEM AC.png">
+<img src="IMAGEM AD.png">
+<img src="IMAGEM AE.png">
+<img src="IMAGEM AF.png">
+<img src="IMAGEM AC.png">
+<img src="IMAGEM AD.png">
+<img src="IMAGEM AE.png">
 
 </div>
 
-</section>
+<button class="promo-button" onclick="showSection('promocoes')">Promoções</button>
 
+<div class="tabela-honorarios">
+<a href="tabela-honorarios.pdf" target="_blank">
+Tabela Referencial de Honorários
+</a>
+</div>
 
-<section class="container" id="sobre">
+<h1 class="title">Contabilidade para MEI e Simples Nacional</h1>
 
-<h2 class="section-title">Sobre</h2>
+<h2 class="subtitle">Serviços contábeis eficientes para o crescimento da sua empresa</h2>
 
-<div class="about">
+<div class="cta-mei">
+<a href="https://wa.me/5521985430782?text=Olá!%20Gostaria%20de%20abrir%20um%20MEI." target="_blank">
+Abrir MEI Grátis
+</a>
+</div>
 
-<img src="IMAGEM H.png">
-
-<div class="about-text">
-
-<p>
-
-Sou Vitor de Oliveira Xavier, contador registrado no CRC-RJ.
-
-Especialista em contabilidade para MEI e Simples Nacional, atendendo toda a região de São Gonçalo, Niterói e Rio de Janeiro.
-
+<p style="text-align:center;font-size:18px;margin-bottom:30px;">
+⭐⭐⭐⭐⭐ Atendimento especializado para MEI e Simples Nacional em São Gonçalo e Niterói
 </p>
 
+</section>
+
+<section id="servicos" style="display:none">
+
+<h2>Serviços</h2>
+
+<div class="image-grid">
+
+<div class="image-card">
+<img src="IMAGEM B.png">
+<h3>Abertura de MEI Grátis</h3>
+</div>
+
+<div class="image-card">
+<img src="IMAGEM C.png">
+<h3>Gestão de DAS</h3>
+</div>
+
+<div class="image-card">
+<img src="IMAGEM D.png">
+<h3>Simples Nacional</h3>
+</div>
+
+<div class="image-card">
+<img src="IMAGEM E.png">
+<h3>Imposto de Renda</h3>
+</div>
+
+<div class="image-card">
+<img src="IMAGEM F.png">
+<h3>Certificado Digital</h3>
+</div>
+
+<div class="image-card">
+<img src="IMAGEM G.png">
+<h3>Cálculos Trabalhistas</h3>
 </div>
 
 </div>
 
 </section>
 
+<section id="promocoes" style="display:none">
 
-<section class="container" id="contato">
+<h2>Promoções</h2>
 
-<h2 class="section-title">Contato</h2>
+<div class="promocao-card">
 
-<form class="contact-form">
+<img src="plano1.png">
+<img src="plano2.png">
+<img src="plano3.png">
 
-<input type="text" placeholder="Nome">
+</div>
 
-<input type="email" placeholder="Email">
+</section>
 
-<input type="tel" placeholder="Telefone">
+<section id="contato" style="display:none">
 
-<textarea rows="5" placeholder="Mensagem"></textarea>
+<h2>Contato</h2>
 
-<button>Enviar</button>
+<form id="contact-form">
+
+<input type="text" id="name" placeholder="Nome" required>
+<input type="tel" id="phone" placeholder="Telefone" required>
+<input type="email" id="email" placeholder="Email" required>
+<textarea id="message" placeholder="Mensagem"></textarea>
+
+<div class="g-recaptcha" data-sitekey="6Le3fnErAAAAAEFqQ3a3px-EvLdAueMRPG-9HErC"></div>
+
+<button type="button" onclick="sendEmail()">Enviar</button>
 
 </form>
 
-</section>
+<div class="map">
 
-
-<section class="container">
-
-<h2 class="section-title">Perguntas Frequentes</h2>
-
-<div class="faq">
-
-<h3>Quanto custa abrir um MEI?</h3>
-<p>A abertura do MEI é gratuita e pode ser feita rapidamente com auxílio da VX Contabilidade.</p>
-
-<h3>Quem pode ser MEI?</h3>
-<p>Profissionais autônomos com faturamento anual até R$81 mil.</p>
-
-<h3>Preciso de contador sendo MEI?</h3>
-<p>Não é obrigatório, mas o contador ajuda a evitar erros fiscais e organizar o negócio.</p>
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d470585.5722958972!2d-43.6084183!3d-22.8598374!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6369bd747cd8ab49%3A0x9b2e7a2aeaa65670!2sVX%20Contabilidade!5e0!3m2!1spt-BR!2sbr!4v1751071132714!5m2!1spt-BR!2sbr"></iframe>
 
 </div>
 
 </section>
 
+</main>
 
-<section class="container map">
-
-<iframe src="https://www.google.com/maps?q=VX%20Contabilidade%20São%20Gonçalo&output=embed"></iframe>
-
-</section>
-
-
-<footer>
-
-<p>© 2026 VX Contabilidade - Todos os direitos reservados</p>
-
+<footer class="footer">
+© 2025 VX Contabilidade
 </footer>
 
+<a href="https://wa.me/5521985430782?text=Olá!%20Gostaria%20de%20informações." class="whatsapp-float" target="_blank">
+<img src="whats.png">
+</a>
 
-<a href="https://wa.me/5521985430782" class="whatsapp">💬</a>
+<script>
 
+/* MENU */
+
+function showSection(sectionId){
+
+const sections=['inicio','servicos','promocoes','sobre','contato']
+
+sections.forEach(id=>{
+const el=document.getElementById(id)
+if(el) el.style.display=id===sectionId?'block':'none'
+})
+
+}
+
+/* HERO CAROUSEL CORRIGIDO */
+
+const heroCarousel=document.getElementById('hero-carousel')
+
+const heroImages=heroCarousel.getElementsByTagName('img')
+
+let heroIndex=0
+
+const heroImagesPerView=window.innerWidth<=768?1:3
+
+const totalHeroImages=heroImages.length-heroImagesPerView
+
+function nextHeroSlide(){
+
+heroIndex++
+
+heroCarousel.style.transition='transform .5s ease'
+
+heroCarousel.style.transform=`translateX(-${heroIndex*(100/heroImagesPerView)}%)`
+
+if(heroIndex>=totalHeroImages){
+
+setTimeout(()=>{
+heroCarousel.style.transition='none'
+heroIndex=0
+heroCarousel.style.transform='translateX(0)'
+},500)
+
+}
+
+}
+
+setInterval(nextHeroSlide,3000)
+
+/* EMAIL */
+
+emailjs.init("s0FfO34iE-17Lz7Wc")
+
+function sendEmail(){
+
+const recaptchaResponse=grecaptcha.getResponse()
+
+if(!recaptchaResponse){
+alert('Complete o reCAPTCHA')
+return
+}
+
+const templateParams={
+name:document.getElementById('name').value,
+phone:document.getElementById('phone').value,
+email:document.getElementById('email').value,
+message:document.getElementById('message').value,
+'g-recaptcha-response':recaptchaResponse
+}
+
+emailjs.send("service_7lrfedc","template_7wcrlnj",templateParams)
+
+.then(()=>{
+
+alert('Mensagem enviada com sucesso')
+
+document.getElementById('contact-form').reset()
+
+grecaptcha.reset()
+
+})
+
+}
+
+</script>
 
 </body>
 </html>
