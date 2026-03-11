@@ -475,25 +475,27 @@
       background-color: #717171;
     }
     /* Estilos para promoções (nova seção) */
-    .promocoes-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      margin-bottom: 40px;
-      width: 100%;
-      justify-items: center;
-    }
-    .promocao-card {
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 20px;
-      background-color: #f9f9f9;
-    }
-    .promocao-card img {
+  .promocoes-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 40px;
+  width: 100%;
+  justify-items: center;
+}
+  .promocao-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  max-width: 600px;
+}
+.promocao-card img {
 display: block;
 margin-left: auto;
 margin-right: auto;
@@ -672,7 +674,6 @@ margin-bottom: 15px;
     <nav class="nav-menu">
       <a href="#inicio" onclick="showSection('inicio')">Início</a>
       <a href="#servicos" onclick="showSection('servicos')">Serviços</a>
-      <a href="#promocoes" onclick="showSection('promocoes')">Promoções</a>
       <a href="#sobre" onclick="showSection('sobre')">Sobre</a>
       <a href="#contato" onclick="showSection('contato')">Contato</a>
     </nav>
@@ -680,7 +681,6 @@ margin-bottom: 15px;
       <span class="close-menu" onclick="toggleMenu()">×</span>
       <a href="#inicio" onclick="showSection('inicio'); toggleMenu()">Início</a>
       <a href="#servicos" onclick="showSection('servicos'); toggleMenu()">Serviços</a>
-      <a href="#promocoes" onclick="showSection('promocoes'); toggleMenu()">Promoções</a>
       <a href="#sobre" onclick="showSection('sobre'); toggleMenu()">Sobre</a>
       <a href="#contato" onclick="showSection('contato'); toggleMenu()">Contato</a>
     </nav>
