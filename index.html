@@ -148,7 +148,7 @@
       margin: 10px 0;
       text-align: center;
     }
-    /* Botões de ação - centralizados e lado a lado */
+    /* Botões de ação */
     .action-buttons {
       display: flex;
       flex-wrap: wrap;
@@ -177,18 +177,9 @@
       animation-play-state: paused;
     }
     @keyframes pulse {
-      0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(44, 120, 115, 0.7);
-      }
-      50% {
-        transform: scale(1.1);
-        box-shadow: 0 0 10px 5px rgba(44, 120, 115, 0.4);
-      }
-      100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(44, 120, 115, 0.7);
-      }
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(44, 120, 115, 0.7); }
+      50% { transform: scale(1.1); box-shadow: 0 0 10px 5px rgba(44, 120, 115, 0.4); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(44, 120, 115, 0.7); }
     }
     /* Main Content */
     .main-content {
@@ -499,7 +490,6 @@
       padding: 20px;
       background-color: #f9f9f9;
       width: 100%;
-      max-width: 500px;
       margin: 0 auto;
     }
     .promocao-card img {
@@ -520,7 +510,7 @@
       text-align: justify;
       font-size: 16px;
     }
-    /* Desktop-specific styles */
+    /* Ajuste tamanho das imagens de promoções e IRPF no desktop */
     @media (min-width: 769px) {
       .image-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -551,7 +541,21 @@
         gap: 30px;
       }
       .promocao-card {
-        max-width: none;
+        max-width: 380px; /* um pouco maior que a imagem para margem */
+        padding: 20px;
+      }
+      .promocao-card img {
+        max-width: 336px; /* ≈ 480px * 0.7 */
+      }
+      /* Imagem IRPF 2026 com mesmo tamanho das promoções no desktop */
+      #irpf2026 img {
+        max-width: 336px;
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        margin: 0 auto 30px auto;
+        display: block;
       }
     }
     /* Responsive Design */
@@ -641,6 +645,9 @@
       .promocao-card img {
         max-width: 100%;
       }
+      #irpf2026 img {
+        max-width: 100%;
+      }
     }
   </style>
 </head>
@@ -689,12 +696,10 @@
           <button class="carousel-btn right" onclick="nextHeroSlide()">❯</button>
         </div>
       </div>
-
       <div class="action-buttons">
         <button class="promo-button" onclick="showSection('promocoes')" aria-label="Ver promoções">Promoções</button>
         <a href="#irpf2026" class="irpf-button" onclick="showSection('irpf2026')">Imposto de Renda 2026</a>
       </div>
-
       <h1 class="title">Contabilidade para MEI e Simples Nacional</h1>
       <h2 class="subtitle">Serviços contábeis eficientes para o crescimento da sua empresa</h2>
       <div class="welcome-message">
@@ -705,7 +710,6 @@
         <p>Será um prazer caminhar ao seu lado nessa jornada. <a href="#contato" onclick="showSection('contato')">Entre em contato</a>!</p>
       </div>
     </section>
-
     <section id="servicos" style="display: none;">
       <h2 class="section-title">Serviços</h2>
       <div class="image-grid">
@@ -751,7 +755,6 @@
         </div>
       </div>
     </section>
-
     <section id="promocoes" style="display: none;">
       <h2 class="section-title">Promoções Atuais</h2>
       <p style="text-align: center; margin-bottom: 40px;">Confira nossas promoções vigentes. Entre em contato para mais detalhes!</p>
@@ -770,21 +773,18 @@
         </div>
       </div>
     </section>
-
     <section id="irpf2026" style="display: none; text-align: center;">
       <h2 class="section-title">Imposto de Renda 2026</h2>
       <p style="font-size: 18px; max-width: 700px; margin: 0 auto 30px; color: #333;">
         IRPF 2026 (ano-base 2025).<br>
-        
       </p>
-      <img 
-        src="irpf2026.png" 
-        alt="Imposto de Renda Pessoa Física 2026 - VX Contabilidade" 
-        style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: block; margin: 0 auto;"
+      <img
+        src="irpf2026.png"
+        alt="Imposto de Renda Pessoa Física 2026 - VX Contabilidade"
+        style="max-width: 336px; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: block; margin: 0 auto 30px auto;"
         loading="lazy"
       >
     </section>
-
     <section id="sobre" style="display: none;">
       <h2 class="section-title">Sobre a VX Contabilidade</h2>
       <div class="about-section">
@@ -824,7 +824,6 @@
         <div class="dots" id="dots"></div>
       </div>
     </section>
-
     <section id="contato" style="display: none;">
       <h2 class="section-title">Entre em Contato</h2>
       <div class="contact-form">
@@ -856,7 +855,6 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d470585.5722958972!2d-43.6084183!3d-22.8598374!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6369bd747cd8ab49%3A0x9b2e7a2aeaa65670!2sVX%20Contabilidade!5e0!3m2!1spt-BR!2sbr!4v1751071132714!5m2!1spt-BR!2sbr" width="1900" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </section>
-
     <section id="politica-privacidade" style="display: none;">
       <h2 class="section-title">Política de Privacidade</h2>
       <div class="privacy-content">
@@ -885,33 +883,27 @@
   <footer class="footer">
     <p>© 2025-2026 VX Contabilidade. Todos os direitos reservados.</p>
   </footer>
-
   <script>
     function toggleMenu() {
       const menu = document.querySelector('.mobile-menu');
       menu.classList.toggle('active');
     }
-
     function showSection(sectionId) {
       const sections = ['inicio', 'servicos', 'promocoes', 'sobre', 'contato', 'politica-privacidade', 'irpf2026'];
       sections.forEach(id => {
         document.getElementById(id).style.display = id === sectionId ? 'block' : 'none';
       });
-      window.scrollTo(0, 0); // Volta ao topo ao trocar de seção
+      window.scrollTo(0, 0);
     }
-
     const heroCarousel = document.getElementById('hero-carousel');
     const heroImages = heroCarousel.getElementsByTagName('img');
     let heroIndex = 0;
     const heroImagesPerView = window.innerWidth <= 768 ? 1 : 3;
     const totalHeroImages = 6;
-    const clonedImages = 3;
-
     function updateHeroSlide() {
       const offset = heroIndex * (100 / heroImagesPerView);
       heroCarousel.style.transform = `translateX(-${offset}%)`;
     }
-
     function nextHeroSlide() {
       heroIndex++;
       heroCarousel.style.transition = 'transform 0.5s ease-in-out';
@@ -924,7 +916,6 @@
         }, 500);
       }
     }
-
     function prevHeroSlide() {
       heroIndex--;
       heroCarousel.style.transition = 'transform 0.5s ease-in-out';
@@ -937,16 +928,13 @@
       }
       updateHeroSlide();
     }
-
     setInterval(nextHeroSlide, 3000);
-
     const carousel = document.getElementById('carousel');
     const dotsContainer = document.getElementById('dots');
     const images = carousel.getElementsByTagName('img');
     let currentIndex = 0;
     const imagesPerView = 2;
     const totalPairs = 4;
-
     for (let i = 0; i < totalPairs; i++) {
       const dot = document.createElement('span');
       dot.classList.add('dot');
@@ -954,21 +942,17 @@
       dot.addEventListener('click', () => goToSlide(i));
       dotsContainer.appendChild(dot);
     }
-
     const dots = document.getElementsByClassName('dot');
-
     function goToSlide(index) {
       currentIndex = index;
       carousel.style.transform = `translateX(-${index * 100}%)`;
       updateDots();
     }
-
     function updateDots() {
       for (let i = 0; i < dots.length; i++) {
         dots[i].classList.toggle('active', i === currentIndex);
       }
     }
-
     function nextSlide() {
       currentIndex++;
       if (currentIndex >= totalPairs) {
@@ -982,18 +966,14 @@
       }
       updateDots();
     }
-
     setInterval(nextSlide, 3000);
-
     emailjs.init("s0FfO34iE-17Lz7Wc");
-
     function sendEmail() {
       const recaptchaResponse = grecaptcha.getResponse();
       if (!recaptchaResponse) {
         alert('Por favor, complete o reCAPTCHA.');
         return;
       }
-
       const templateParams = {
         name: document.getElementById('name').value,
         phone: document.getElementById('phone').value,
@@ -1001,7 +981,6 @@
         message: document.getElementById('message').value,
         'g-recaptcha-response': recaptchaResponse
       };
-
       emailjs.send("service_7lrfedc", "template_7wcrlnj", templateParams)
         .then(() => {
           alert('Mensagem enviada com sucesso!');
@@ -1011,7 +990,6 @@
           alert('Erro ao enviar a mensagem: ' + JSON.stringify(error));
         });
     }
-
     window.addEventListener('load', () => {
       const hash = window.location.hash.replace('#', '');
       if (['inicio', 'servicos', 'promocoes', 'sobre', 'contato', 'politica-privacidade', 'irpf2026'].includes(hash)) {
