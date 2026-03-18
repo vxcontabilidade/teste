@@ -510,29 +510,26 @@
       text-align: justify;
       font-size: 16px;
     }
-    /* Lightbox atualizado - MAIOR TAMANHO POSSÍVEL, menos espaço preto */
+    /* Lightbox para imagens promocionais e IRPF */
     .lightbox {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.94);
+      background: rgba(0, 0, 0, 0.92);
       z-index: 2000;
       justify-content: center;
       align-items: center;
       cursor: pointer;
-      padding: 20px; /* margem de segurança nas bordas */
     }
     .lightbox.active {
       display: flex;
     }
     .lightbox img {
-      max-width: 100%;
-      max-height: 100vh;
-      width: auto;
-      height: auto;
+      max-width: 94%;
+      max-height: 94vh;
       object-fit: contain;
       border-radius: 8px;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.7);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.6);
       pointer-events: none;
     }
     .lightbox .close-btn {
@@ -549,21 +546,6 @@
     }
     .lightbox .close-btn:hover {
       color: #f7e8a0;
-    }
-    /* Ajustes para mobile: ainda maior aproveitamento */
-    @media (max-width: 768px) {
-      .lightbox {
-        padding: 8px; /* menos margem no celular */
-      }
-      .lightbox img {
-        max-width: 100vw;
-        max-height: 92vh; /* deixa espaço pequeno em cima/embaixo para o botão fechar */
-      }
-      .lightbox .close-btn {
-        top: 10px;
-        right: 15px;
-        font-size: 40px;
-      }
     }
     /* Ajustes desktop */
     @media (min-width: 769px) {
@@ -738,14 +720,19 @@
           <div class="hero-carousel" id="hero-carousel">
             <img src="IMAGEM AA.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
             <img src="IMAGEM AB.png" alt="Simples Nacional em São Gonçalo" loading="lazy">
-            <img src="IMAGEM AC.png" alt="Cálculos trabalhistas em São Gonçalo" loading="lazy">
-            <img src="IMAGEM AD.png" alt="Imposto de Renda para MEI" loading="lazy">
-            <img src="IMAGEM AE.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
-            <img src="IMAGEM AF.png" alt="Simples Nacional em São Gonçalo" loading="lazy">
-            <img src="IMAGEM AC.png" alt="Cálculos trabalhistas em São Gonçalo" loading="lazy">
-            <img src="IMAGEM AD.png" alt="Imposto de Renda para MEI" loading="lazy">
-            <img src="IMAGEM AE.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
-          </div>
+            <img src="IMAGEM AC.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
+            <img src="IMAGEM AD.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
+ 	    <img src="IMAGEM AE.png" alt="Simples Nacional em São Gonçalo" loading="lazy">
+            <img src="IMAGEM AA.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
+            <img src="IMAGEM AB.png" alt="Simples Nacional em São Gonçalo" loading="lazy">
+            <img src="IMAGEM AC.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
+            <img src="IMAGEM AD.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
+ 	    <img src="IMAGEM AE.png" alt="Simples Nacional em São Gonçalo" loading="lazy">
+     	    <img src="IMAGEM AA.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
+            <img src="IMAGEM AB.png" alt="Simples Nacional em São Gonçalo" loading="lazy">
+            <img src="IMAGEM AC.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
+            <img src="IMAGEM AD.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
+ 	    <img src="IMAGEM AE.png" alt="Simples Nacional em São Gonçalo" loading="lazy">
           <button class="carousel-btn left" onclick="prevHeroSlide()">❮</button>
           <button class="carousel-btn right" onclick="nextHeroSlide()">❯</button>
         </div>
@@ -811,9 +798,9 @@
     </section>
     <section id="promocoes" style="display: none;">
       <h2 class="section-title">Promoções Atuais</h2>
-      <p style="text-align: center; margin-bottom: 40px;">Confira nossas promoções vigentes. Entre em contato para mais detalhes!</p>
+      <p style="text-align: center; margin-bottom: 40px;">Confira nossas promoções! Clique na imagem para ampliar.</p>
       <div class="promocoes-grid">
-        <div class="promocao-card">
+	<div class="promocao-card">
           <img src="plano1.png" alt="Plano 1 - Promoção VX Contabilidade" loading="lazy" onclick="openLightbox(this.src)" style="cursor: pointer;">
         </div>
         <div class="promocao-card">
@@ -830,7 +817,7 @@
     <section id="irpf2026" style="display: none; text-align: center;">
       <h2 class="section-title">Imposto de Renda 2026</h2>
       <p style="font-size: 18px; max-width: 700px; margin: 0 auto 30px; color: #333;">
-        IRPF 2026 (ano-base 2025).<br>
+        IRPF 2026 (ano-base 2025). Clique na imagem para ampliar.<br>
       </p>
       <img
         src="irpf2026.png"
@@ -938,11 +925,13 @@
   <footer class="footer">
     <p>© 2025-2026 VX Contabilidade. Todos os direitos reservados.</p>
   </footer>
+
   <!-- Lightbox / Modal full-screen -->
   <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
     <span class="close-btn" onclick="closeLightbox()">×</span>
     <img id="lightbox-img" src="" alt="Imagem ampliada">
   </div>
+
   <script>
     function toggleMenu() {
       const menu = document.querySelector('.mobile-menu');
@@ -974,6 +963,7 @@
       updateHeroSlide();
     }
     setInterval(nextHeroSlide, 3000);
+
     // Carousel de depoimentos
     const carousel = document.getElementById('carousel');
     const dotsContainer = document.getElementById('dots');
@@ -1000,6 +990,7 @@
       updateDots();
     }
     setInterval(nextSlide, 5000);
+
     // EmailJS
     emailjs.init("s0FfO34iE-17Lz7Wc");
     function sendEmail() {
@@ -1024,6 +1015,7 @@
           alert('Erro ao enviar: ' + JSON.stringify(error));
         });
     }
+
     // Lightbox functionality
     function openLightbox(src) {
       const lightbox = document.getElementById('lightbox');
@@ -1032,6 +1024,7 @@
       lightbox.classList.add('active');
       document.body.style.overflow = 'hidden'; // trava scroll da página enquanto o modal está aberto
     }
+
     function closeLightbox(e) {
       if (!e || e.target.classList.contains('lightbox') || e.target.classList.contains('close-btn')) {
         const lightbox = document.getElementById('lightbox');
@@ -1039,6 +1032,7 @@
         document.body.style.overflow = ''; // libera scroll
       }
     }
+
     // Carregar seção via hash
     window.addEventListener('load', () => {
       const hash = window.location.hash.replace('#', '');
