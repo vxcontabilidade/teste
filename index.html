@@ -148,11 +148,7 @@
       margin: 10px 0;
       text-align: center;
     }
-    /* Ajuste principal para evitar sobreposição do header fixo */
-    main.main-content {
-      padding-top: 90px; /* Ajuste este valor se necessário (80px a 100px) */
-    }
-    /* Botões de ação */
+    /* Botões de ação - agora só o de promoções */
     .action-buttons {
       display: flex;
       flex-wrap: wrap;
@@ -160,8 +156,7 @@
       gap: 20px;
       margin: 30px auto;
     }
-    .promo-button,
-    .irpf-button {
+    .promo-button {
       background-color: #2c7873;
       color: #f7e8a0;
       padding: 12px 24px;
@@ -175,8 +170,7 @@
       text-decoration: none;
       display: inline-block;
     }
-    .promo-button:hover,
-    .irpf-button:hover {
+    .promo-button:hover {
       background-color: #22635e;
       animation-play-state: paused;
     }
@@ -429,8 +423,8 @@
     .footer p {
       text-align: center;
     }
-    /* Full-screen sections */
-    #servicos, #sobre, #contato, #politica-privacidade, #promocoes, #irpf2026 {
+    /* Full-screen sections - sem irpf2026 */
+    #servicos, #sobre, #contato, #politica-privacidade, #promocoes {
       width: 100%;
       max-width: 1200px;
       padding: 100px 20px 20px 20px;
@@ -450,7 +444,7 @@
     }
     .carousel {
       display: flex;
-      transition: transform 0.7s ease-in-out;
+      transition: transform 0.5s ease-in-out;
     }
     .carousel img {
       width: 50%;
@@ -514,44 +508,7 @@
       text-align: justify;
       font-size: 16px;
     }
-    /* Lightbox para imagens promocionais e IRPF */
-    .lightbox {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.92);
-      z-index: 2000;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-    }
-    .lightbox.active {
-      display: flex;
-    }
-    .lightbox img {
-      max-width: 94%;
-      max-height: 94vh;
-      object-fit: contain;
-      border-radius: 8px;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.6);
-      pointer-events: none;
-    }
-    .lightbox .close-btn {
-      position: absolute;
-      top: 20px;
-      right: 25px;
-      color: #fff;
-      font-size: 48px;
-      font-weight: bold;
-      cursor: pointer;
-      text-shadow: 0 0 8px #000;
-      z-index: 2001;
-      line-height: 1;
-    }
-    .lightbox .close-btn:hover {
-      color: #f7e8a0;
-    }
-    /* Ajustes desktop */
+    /* Desktop */
     @media (min-width: 769px) {
       .image-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -588,17 +545,8 @@
       .promocao-card img {
         max-width: 336px;
       }
-      #irpf2026 img {
-        max-width: 437px;
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        margin: 0 auto 30px auto;
-        display: block;
-      }
     }
-    /* Responsive Design */
+    /* Mobile */
     @media (max-width: 768px) {
       .header {
         padding: 10px;
@@ -670,8 +618,7 @@
         flex-direction: column;
         gap: 15px;
       }
-      .promo-button,
-      .irpf-button {
+      .promo-button {
         padding: 10px 20px;
         font-size: 16px;
         width: 90%;
@@ -684,13 +631,6 @@
       }
       .promocao-card img {
         max-width: 100%;
-      }
-      #irpf2026 img {
-        max-width: 100%;
-      }
-      /* Ajuste menor no mobile para não ficar muito espaço */
-      main.main-content {
-        padding-top: 80px; /* Pode ser um pouco menor no mobile */
       }
     }
   </style>
@@ -726,24 +666,21 @@
       <div class="hero-image">
         <div class="hero-carousel-container">
           <div class="hero-carousel" id="hero-carousel">
+         <img src="IMAGEM AA.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
+            <img src="IMAGEM AB.png" alt="Simples Nacional em São Gonçalo" loading="lazy">
+            <img src="IMAGEM AC.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
+            <img src="IMAGEM AD.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
+ 	    <img src="IMAGEM AE.png" alt="Simples Nacional em São Gonçalo" loading="lazy">
             <img src="IMAGEM AA.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
             <img src="IMAGEM AB.png" alt="Simples Nacional em São Gonçalo" loading="lazy">
             <img src="IMAGEM AC.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
             <img src="IMAGEM AD.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
-            <img src="IMAGEM AE.png" alt="Simples Nacional em São Gonçalo" loading="lazy">
-            <img src="IMAGEM AA.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
+ 	    <img src="IMAGEM AE.png" alt="Simples Nacional em São Gonçalo" loading="lazy">
+     	    <img src="IMAGEM AA.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
             <img src="IMAGEM AB.png" alt="Simples Nacional em São Gonçalo" loading="lazy">
             <img src="IMAGEM AC.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
             <img src="IMAGEM AD.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
-            <img src="IMAGEM AE.png" alt="Simples Nacional em São Gonçalo" loading="lazy">
-            <img src="IMAGEM AA.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
-            <img src="IMAGEM AB.png" alt="Simples Nacional em São Gonçalo" loading="lazy">
-            <img src="IMAGEM AC.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
-            <img src="IMAGEM AD.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
-            <img src="IMAGEM AE.png" alt="Simples Nacional em São Gonçalo" loading="lazy">
-	    <img src="IMAGEM AA.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
-            <img src="IMAGEM AB.png" alt="Simples Nacional em São Gonçalo" loading="lazy">
-
+ 	    <img src="IMAGEM AE.png" alt="Simples Nacional em São Gonçalo" loading="lazy">
           </div>
           <button class="carousel-btn left" onclick="prevHeroSlide()">❮</button>
           <button class="carousel-btn right" onclick="nextHeroSlide()">❯</button>
@@ -751,7 +688,6 @@
       </div>
       <div class="action-buttons">
         <button class="promo-button" onclick="showSection('promocoes')" aria-label="Ver promoções">Promoções</button>
-        <a href="#irpf2026" class="irpf-button" onclick="showSection('irpf2026')">Imposto de Renda 2026</a>
       </div>
       <h1 class="title">Contabilidade para MEI e Simples Nacional</h1>
       <h2 class="subtitle">Serviços contábeis eficientes para o crescimento da sua empresa</h2>
@@ -810,34 +746,21 @@
     </section>
     <section id="promocoes" style="display: none;">
       <h2 class="section-title">Promoções Atuais</h2>
-      <p style="text-align: center; margin-bottom: 40px;">Confira nossas promoções! Clique na imagem para ampliar.</p>
+      <p style="text-align: center; margin-bottom: 40px;">Confira nossas promoções vigentes. Entre em contato para mais detalhes!</p>
       <div class="promocoes-grid">
         <div class="promocao-card">
-          <img src="plano1.png" alt="Plano 1 - Promoção VX Contabilidade" loading="lazy" onclick="openLightbox(this.src)" style="cursor: pointer;">
+          <img src="plano1.png" alt="Plano 1 - Promoção VX Contabilidade" loading="lazy">
         </div>
         <div class="promocao-card">
-          <img src="plano2.png" alt="Plano 2 - Promoção VX Contabilidade" loading="lazy" onclick="openLightbox(this.src)" style="cursor: pointer;">
+          <img src="plano2.png" alt="Plano 2 - Promoção VX Contabilidade" loading="lazy">
         </div>
         <div class="promocao-card">
-          <img src="plano3.png" alt="Plano 3 - Promoção VX Contabilidade" loading="lazy" onclick="openLightbox(this.src)" style="cursor: pointer;">
+          <img src="plano3.png" alt="Plano 3 - Promoção VX Contabilidade" loading="lazy">
         </div>
         <div class="promocao-card">
-          <img src="plano4.png" alt="Plano 4 - Promoção VX Contabilidade" loading="lazy" onclick="openLightbox(this.src)" style="cursor: pointer;">
+          <img src="plano4.png" alt="Plano 4 - Promoção VX Contabilidade" loading="lazy">
         </div>
       </div>
-    </section>
-    <section id="irpf2026" style="display: none; text-align: center;">
-      <h2 class="section-title">Imposto de Renda 2026</h2>
-      <p style="font-size: 18px; max-width: 700px; margin: 0 auto 30px; color: #333;">
-        IRPF 2026 (ano-base 2025). Clique na imagem para ampliar.<br>
-      </p>
-      <img
-        src="irpf2026.png"
-        alt="Imposto de Renda Pessoa Física 2026 - VX Contabilidade"
-        loading="lazy"
-        onclick="openLightbox(this.src)"
-        style="cursor: pointer;"
-      >
     </section>
     <section id="sobre" style="display: none;">
       <h2 class="section-title">Sobre a VX Contabilidade</h2>
@@ -937,27 +860,22 @@
   <footer class="footer">
     <p>© 2025-2026 VX Contabilidade. Todos os direitos reservados.</p>
   </footer>
-  <!-- Lightbox / Modal full-screen -->
-  <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
-    <span class="close-btn" onclick="closeLightbox()">×</span>
-    <img id="lightbox-img" src="" alt="Imagem ampliada">
-  </div>
   <script>
     function toggleMenu() {
       const menu = document.querySelector('.mobile-menu');
       menu.classList.toggle('active');
     }
     function showSection(sectionId) {
-      const sections = ['inicio', 'servicos', 'promocoes', 'sobre', 'contato', 'politica-privacidade', 'irpf2026'];
+      const sections = ['inicio', 'servicos', 'promocoes', 'sobre', 'contato', 'politica-privacidade'];
       sections.forEach(id => {
         document.getElementById(id).style.display = id === sectionId ? 'block' : 'none';
       });
-      window.scrollTo(0, 0); // Volta ao topo
+      window.scrollTo(0, 0);
     }
     const heroCarousel = document.getElementById('hero-carousel');
     let heroIndex = 0;
     const heroImagesPerView = window.innerWidth <= 768 ? 1 : 3;
-    const totalHeroImages = 15; // atualizado para contar as 15 imagens que você tem agora
+    const totalHeroImages = 9;
     function updateHeroSlide() {
       const offset = heroIndex * (100 / heroImagesPerView);
       heroCarousel.style.transform = `translateX(-${offset}%)`;
@@ -973,7 +891,7 @@
       updateHeroSlide();
     }
     setInterval(nextHeroSlide, 3000);
-    // Carousel de depoimentos
+    // Carousel depoimentos
     const carousel = document.getElementById('carousel');
     const dotsContainer = document.getElementById('dots');
     let currentIndex = 0;
@@ -1023,25 +941,10 @@
           alert('Erro ao enviar: ' + JSON.stringify(error));
         });
     }
-    // Lightbox functionality
-    function openLightbox(src) {
-      const lightbox = document.getElementById('lightbox');
-      const img = document.getElementById('lightbox-img');
-      img.src = src;
-      lightbox.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeLightbox(e) {
-      if (!e || e.target.classList.contains('lightbox') || e.target.classList.contains('close-btn')) {
-        const lightbox = document.getElementById('lightbox');
-        lightbox.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    }
-    // Carregar seção via hash
     window.addEventListener('load', () => {
       const hash = window.location.hash.replace('#', '');
-      if (['inicio', 'servicos', 'promocoes', 'sobre', 'contato', 'politica-privacidade', 'irpf2026'].includes(hash)) {
+      const validSections = ['inicio', 'servicos', 'promocoes', 'sobre', 'contato', 'politica-privacidade'];
+      if (validSections.includes(hash)) {
         showSection(hash);
       } else {
         showSection('inicio');
