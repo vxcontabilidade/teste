@@ -148,7 +148,10 @@
       margin: 10px 0;
       text-align: center;
     }
-    /* Botões de ação - agora só o de promoções */
+    main.main-content {
+      padding-top: 90px;
+    }
+    /* Botões de ação */
     .action-buttons {
       display: flex;
       flex-wrap: wrap;
@@ -179,6 +182,40 @@
       50% { transform: scale(1.1); box-shadow: 0 0 10px 5px rgba(44, 120, 115, 0.4); }
       100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(44, 120, 115, 0.7); }
     }
+    /* Botão flutuante WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 65px;
+      height: 65px;
+      background-color: #25d366;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+    .whatsapp-float img {
+      width: 45px;
+      height: 45px;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.12);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      background-color: #20b358;
+    }
+    @keyframes pulse-whatsapp {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0.0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.0); }
+    }
+    .whatsapp-float {
+      animation: pulse-whatsapp 2s infinite;
+    }
     /* Main Content */
     .main-content {
       padding: 20px;
@@ -204,7 +241,7 @@
     }
     .hero-carousel {
       display: flex;
-      transition: transform 0.7s ease-in-out;
+      transition: transform 0.5s ease-in-out;
     }
     .hero-carousel img {
       width: 33.33%;
@@ -423,7 +460,7 @@
     .footer p {
       text-align: center;
     }
-    /* Full-screen sections - sem irpf2026 */
+    /* Full-screen sections */
     #servicos, #sobre, #contato, #politica-privacidade, #promocoes {
       width: 100%;
       max-width: 1200px;
@@ -444,7 +481,7 @@
     }
     .carousel {
       display: flex;
-      transition: transform 0.5s ease-in-out;
+      transition: transform 0.7s ease-in-out;
     }
     .carousel img {
       width: 50%;
@@ -508,44 +545,44 @@
       text-align: justify;
       font-size: 16px;
     }
-    /* Botão flutuante WhatsApp */
-    .whatsapp-float {
+    /* Lightbox */
+    .lightbox {
+      display: none;
       position: fixed;
-      bottom: 25px;
-      right: 25px;
-      width: 65px;
-      height: 65px;
-      background-color: #25d366; /* Verde oficial WhatsApp */
-      color: #fff;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 40px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      z-index: 9999;
-      display: flex;
-      align-items: center;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.92);
+      z-index: 2000;
       justify-content: center;
-      transition: all 0.3s ease;
-      text-decoration: none;
+      align-items: center;
+      cursor: pointer;
     }
-    .whatsapp-float img {
-      width: 45px;
-      height: 45px;
+    .lightbox.active {
+      display: flex;
     }
-    .whatsapp-float:hover {
-      background-color: #20b358;
-      transform: scale(1.1);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+    .lightbox img {
+      max-width: 94%;
+      max-height: 94vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+      pointer-events: none;
     }
-    @keyframes pulse-whatsapp {
-      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    .lightbox .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      color: #fff;
+      font-size: 48px;
+      font-weight: bold;
+      cursor: pointer;
+      text-shadow: 0 0 8px #000;
+      z-index: 2001;
+      line-height: 1;
     }
-    .whatsapp-float {
-      animation: pulse-whatsapp 2s infinite;
+    .lightbox .close-btn:hover {
+      color: #f7e8a0;
     }
-    /* Desktop */
+    /* Ajustes desktop */
     @media (min-width: 769px) {
       .image-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -583,7 +620,7 @@
         max-width: 336px;
       }
     }
-    /* Mobile */
+    /* Responsive Design */
     @media (max-width: 768px) {
       .header {
         padding: 10px;
@@ -669,11 +706,14 @@
       .promocao-card img {
         max-width: 100%;
       }
+      main.main-content {
+        padding-top: 80px;
+      }
       .whatsapp-float {
         width: 55px;
         height: 55px;
-        bottom: 20px;
-        right: 20px;
+        bottom: 15px;
+        right: 15px;
       }
       .whatsapp-float img {
         width: 38px;
@@ -708,6 +748,7 @@
       <a href="#contato" onclick="showSection('contato'); toggleMenu()">Contato</a>
     </nav>
   </header>
+
   <main class="main-content">
     <section id="inicio">
       <div class="hero-image">
@@ -730,6 +771,8 @@
             <img src="IMAGEM AE.png" alt="Simples Nacional em São Gonçalo" loading="lazy">
             <img src="IMAGEM AA.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
             <img src="IMAGEM AB.png" alt="Simples Nacional em São Gonçalo" loading="lazy">
+ 	    <img src="IMAGEM AC.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
+            <img src="IMAGEM AD.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
           </div>
           <button class="carousel-btn left" onclick="prevHeroSlide()">❮</button>
           <button class="carousel-btn right" onclick="nextHeroSlide()">❯</button>
@@ -748,6 +791,7 @@
         <p>Será um prazer caminhar ao seu lado nessa jornada. <a href="#contato" onclick="showSection('contato')">Entre em contato</a>!</p>
       </div>
     </section>
+
     <section id="servicos" style="display: none;">
       <h2 class="section-title">Serviços</h2>
       <div class="image-grid">
@@ -793,24 +837,26 @@
         </div>
       </div>
     </section>
+
     <section id="promocoes" style="display: none;">
       <h2 class="section-title">Promoções Atuais</h2>
-      <p style="text-align: center; margin-bottom: 40px;">Confira nossas promoções vigentes. Entre em contato para mais detalhes!</p>
+      <p style="text-align: center; margin-bottom: 40px;">Confira nossas promoções! Clique na imagem para ampliar.</p>
       <div class="promocoes-grid">
         <div class="promocao-card">
-          <img src="plano1.png" alt="Plano 1 - Promoção VX Contabilidade" loading="lazy">
+          <img src="plano1.png" alt="Plano 1 - Promoção VX Contabilidade" loading="lazy" onclick="openLightbox(this.src)" style="cursor: pointer;">
         </div>
         <div class="promocao-card">
-          <img src="plano2.png" alt="Plano 2 - Promoção VX Contabilidade" loading="lazy">
+          <img src="plano2.png" alt="Plano 2 - Promoção VX Contabilidade" loading="lazy" onclick="openLightbox(this.src)" style="cursor: pointer;">
         </div>
         <div class="promocao-card">
-          <img src="plano3.png" alt="Plano 3 - Promoção VX Contabilidade" loading="lazy">
+          <img src="plano3.png" alt="Plano 3 - Promoção VX Contabilidade" loading="lazy" onclick="openLightbox(this.src)" style="cursor: pointer;">
         </div>
         <div class="promocao-card">
-          <img src="plano4.png" alt="Plano 4 - Promoção VX Contabilidade" loading="lazy">
+          <img src="plano4.png" alt="Plano 4 - Promoção VX Contabilidade" loading="lazy" onclick="openLightbox(this.src)" style="cursor: pointer;">
         </div>
       </div>
     </section>
+
     <section id="sobre" style="display: none;">
       <h2 class="section-title">Sobre a VX Contabilidade</h2>
       <div class="about-section">
@@ -850,6 +896,7 @@
         <div class="dots" id="dots"></div>
       </div>
     </section>
+
     <section id="contato" style="display: none;">
       <h2 class="section-title">Entre em Contato</h2>
       <div class="contact-form">
@@ -881,6 +928,7 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d470585.5722958972!2d-43.6084183!3d-22.8598374!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6369bd747cd8ab49%3A0x9b2e7a2aeaa65670!2sVX%20Contabilidade!5e0!3m2!1spt-BR!2sbr!4v1751071132714!5m2!1spt-BR!2sbr" width="1900" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </section>
+
     <section id="politica-privacidade" style="display: none;">
       <h2 class="section-title">Política de Privacidade</h2>
       <div class="privacy-content">
@@ -902,23 +950,28 @@
           <li>Telefone: (21) 98543-0782</li>
           <li>Endereço: Travessa Joaquim Seabra, nº 42, Nova Cidade, São Gonçalo, RJ</li>
         </ul>
-        <p>Última atualização: 12 de março de 2026.</p>
+        <p>Última atualização: 19 de março de 2026.</p>
       </div>
     </section>
   </main>
+
   <footer class="footer">
     <p>© 2025-2026 VX Contabilidade. Todos os direitos reservados.</p>
   </footer>
 
+  <!-- Lightbox / Modal full-screen -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+    <span class="close-btn" onclick="closeLightbox()">×</span>
+    <img id="lightbox-img" src="" alt="Imagem ampliada">
+  </div>
+
   <!-- Botão flutuante WhatsApp -->
-  <a href="https://wa.me/5521985430782?text=Olá!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20de%20contabilidade." 
+  <a href="https://wa.me/5521985430782?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20de%20contabilidade" 
      class="whatsapp-float" 
      target="_blank" 
      rel="noopener noreferrer"
-     aria-label="Fale comigo no WhatsApp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" 
-         alt="WhatsApp" 
-         loading="lazy">
+     aria-label="Fale conosco pelo WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp">
   </a>
 
   <script>
@@ -936,7 +989,7 @@
     const heroCarousel = document.getElementById('hero-carousel');
     let heroIndex = 0;
     const heroImagesPerView = window.innerWidth <= 768 ? 1 : 3;
-    const totalHeroImages = 9;
+    const totalHeroImages = 17;
     function updateHeroSlide() {
       const offset = heroIndex * (100 / heroImagesPerView);
       heroCarousel.style.transform = `translateX(-${offset}%)`;
@@ -952,7 +1005,8 @@
       updateHeroSlide();
     }
     setInterval(nextHeroSlide, 3000);
-    // Carousel depoimentos
+
+    // Carousel de depoimentos
     const carousel = document.getElementById('carousel');
     const dotsContainer = document.getElementById('dots');
     let currentIndex = 0;
@@ -978,6 +1032,7 @@
       updateDots();
     }
     setInterval(nextSlide, 5000);
+
     // EmailJS
     emailjs.init("s0FfO34iE-17Lz7Wc");
     function sendEmail() {
@@ -1002,10 +1057,27 @@
           alert('Erro ao enviar: ' + JSON.stringify(error));
         });
     }
+
+    // Lightbox functionality
+    function openLightbox(src) {
+      const lightbox = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      img.src = src;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox(e) {
+      if (!e || e.target.classList.contains('lightbox') || e.target.classList.contains('close-btn')) {
+        const lightbox = document.getElementById('lightbox');
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // Carregar seção via hash
     window.addEventListener('load', () => {
       const hash = window.location.hash.replace('#', '');
-      const validSections = ['inicio', 'servicos', 'promocoes', 'sobre', 'contato', 'politica-privacidade'];
-      if (validSections.includes(hash)) {
+      if (['inicio', 'servicos', 'promocoes', 'sobre', 'contato', 'politica-privacidade'].includes(hash)) {
         showSection(hash);
       } else {
         showSection('inicio');
