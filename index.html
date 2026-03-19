@@ -148,7 +148,7 @@
       text-align: center;
     }
     main.main-content {
-      padding-top: 120px; /* Aumentado para dar mais espaço entre header e carousel */
+      padding-top: 90px; /* espaço vertical solicitado: 90px */
     }
     .action-buttons {
       display: flex;
@@ -238,7 +238,7 @@
     .hero-carousel {
       display: flex;
       transition: transform 0.5s ease-in-out;
-      gap: 20px;
+      gap: 0px; /* espaço horizontal entre imagens: 0px conforme solicitado */
     }
     .hero-carousel img {
       width: 33.33%;
@@ -698,7 +698,7 @@
         max-width: 100%;
       }
       main.main-content {
-        padding-top: 100px;
+        padding-top: 90px; /* também 90px no mobile para manter consistência */
       }
       .whatsapp-float {
         width: 55px;
@@ -762,6 +762,8 @@
             <img src="IMAGEM AE.png" alt="Simples Nacional em São Gonçalo" loading="lazy">
             <img src="IMAGEM AA.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
             <img src="IMAGEM AB.png" alt="Simples Nacional em São Gonçalo" loading="lazy">
+	    <img src="IMAGEM AC.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
+            <img src="IMAGEM AD.png" alt="Contabilidade para MEI em São Gonçalo" loading="lazy">
           </div>
           <button class="carousel-btn left" onclick="prevHeroSlide()">❮</button>
           <button class="carousel-btn right" onclick="nextHeroSlide()">❯</button>
@@ -939,7 +941,7 @@
           <li>Telefone: (21) 98543-0782</li>
           <li>Endereço: Travessa Joaquim Seabra, nº 42, Nova Cidade, São Gonçalo, RJ</li>
         </ul>
-        <p>Última atualização: 18 de março de 2026.</p>
+        <p>Última atualização: 19 de março de 2026.</p>
       </div>
     </section>
   </main>
@@ -966,7 +968,6 @@
       const menu = document.querySelector('.mobile-menu');
       menu.classList.toggle('active');
     }
-
     function showSection(sectionId) {
       const sections = ['inicio', 'servicos', 'promocoes', 'sobre', 'contato', 'politica-privacidade'];
       sections.forEach(id => {
@@ -974,7 +975,6 @@
       });
       window.scrollTo(0, 0);
     }
-
     const heroCarousel = document.getElementById('hero-carousel');
     let heroIndex = 0;
     const heroImagesPerView = window.innerWidth <= 768 ? 1 : 3;
@@ -1052,7 +1052,6 @@
       lightbox.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
-
     function closeLightbox(e) {
       if (!e || e.target.classList.contains('lightbox') || e.target.classList.contains('close-btn')) {
         const lightbox = document.getElementById('lightbox');
