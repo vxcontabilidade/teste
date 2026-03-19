@@ -148,7 +148,7 @@
       text-align: center;
     }
     main.main-content {
-      padding-top: 90px;
+      padding-top: 120px; /* Aumentado para dar mais espaço entre header e carousel */
     }
     .action-buttons {
       display: flex;
@@ -238,7 +238,7 @@
     .hero-carousel {
       display: flex;
       transition: transform 0.5s ease-in-out;
-      gap: 20px; /* espaço entre as imagens do carousel */
+      gap: 20px;
     }
     .hero-carousel img {
       width: 33.33%;
@@ -698,7 +698,7 @@
         max-width: 100%;
       }
       main.main-content {
-        padding-top: 80px;
+        padding-top: 100px;
       }
       .whatsapp-float {
         width: 55px;
@@ -948,13 +948,11 @@
     <p>© 2025-2026 VX Contabilidade. Todos os direitos reservados.</p>
   </footer>
 
-  <!-- Lightbox -->
   <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
     <span class="close-btn" onclick="closeLightbox()">×</span>
     <img id="lightbox-img" src="" alt="Imagem ampliada">
   </div>
 
-  <!-- Botão WhatsApp flutuante -->
   <a href="https://wa.me/5521985430782?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20de%20contabilidade" 
      class="whatsapp-float" 
      target="_blank" 
@@ -977,7 +975,6 @@
       window.scrollTo(0, 0);
     }
 
-    // Carousel hero
     const heroCarousel = document.getElementById('hero-carousel');
     let heroIndex = 0;
     const heroImagesPerView = window.innerWidth <= 768 ? 1 : 3;
@@ -998,7 +995,6 @@
     }
     setInterval(nextHeroSlide, 3000);
 
-    // Carousel depoimentos
     const carousel = document.getElementById('carousel');
     const dotsContainer = document.getElementById('dots');
     let currentIndex = 0;
@@ -1025,7 +1021,6 @@
     }
     setInterval(nextSlide, 5000);
 
-    // EmailJS
     emailjs.init("s0FfO34iE-17Lz7Wc");
     function sendEmail() {
       const recaptchaResponse = grecaptcha.getResponse();
@@ -1050,7 +1045,6 @@
         });
     }
 
-    // Lightbox
     function openLightbox(src) {
       const lightbox = document.getElementById('lightbox');
       const img = document.getElementById('lightbox-img');
@@ -1067,7 +1061,6 @@
       }
     }
 
-    // Garantir que cliques nas promoções funcionem (mesmo se HTML for dinâmico)
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.promocoes-grid img').forEach(img => {
         img.addEventListener('click', function() {
@@ -1076,7 +1069,6 @@
       });
     });
 
-    // Carregar seção via hash
     window.addEventListener('load', () => {
       const hash = window.location.hash.replace('#', '');
       if (['inicio', 'servicos', 'promocoes', 'sobre', 'contato', 'politica-privacidade'].includes(hash)) {
