@@ -72,7 +72,9 @@
     .contact-form button:hover { background:#22635e; transform:translateY(-3px); }
     .map iframe { width:100%; max-width:700px; height:420px; border:0; border-radius:12px; box-shadow:0 8px 25px rgba(0,0,0,0.1); display:block; margin:0 auto; }
     .footer { text-align:center; padding:25px; background:#2c7873; color:#f7e8a0; width:100vw; margin-left:calc(-50vw + 50%); margin-right:calc(-50vw + 50%); }
-
+    .email-contact { text-align:center; margin:20px 0; font-size:18px; }
+    .email-contact a { color:#2c7873; font-weight:700; text-decoration:none; }
+    .email-contact a:hover { text-decoration:underline; }
     /* Ajustes específicos para a seção Serviços (melhor legibilidade) */
     .servicos-container {
       max-width: 900px;
@@ -95,7 +97,6 @@
       font-size: 16px;
       color: #444;
     }
-
     @media (max-width:768px) {
       .nav-menu { display:none; }
       .hamburger { display:flex; }
@@ -136,7 +137,6 @@
     <a href="#contato" onclick="showSection('contato'); toggleMenu()">Contato</a>
   </nav>
 </header>
-
 <main class="main-content">
   <section id="inicio">
     <div class="hero-image">
@@ -180,8 +180,6 @@
       <p><a href="#contato" onclick="showSection('contato')">Entre em contato agora</a>!</p>
     </div>
   </section>
-
-  <!-- Seção Serviços - atualizada -->
   <section id="servicos" style="display:none;">
     <h2 class="section-title">Nossos Serviços de Contabilidade</h2>
     <div class="servicos-container">
@@ -229,8 +227,6 @@
       </div>
     </div>
   </section>
-
-  <!-- Promoções -->
   <section id="promocoes" style="display:none;">
     <h2 class="section-title">Promoções Atuais VX Contabilidade</h2>
     <p style="text-align:center; margin-bottom:40px;">Clique nas imagens para ampliar os detalhes das promoções.</p>
@@ -241,8 +237,6 @@
       <div class="promocao-card"><img src="plano4.png" alt="Plano 4 - Promoção VX Contabilidade RJ" loading="lazy" onclick="openLightbox(this.src)" style="cursor:pointer;"></div>
     </div>
   </section>
-
-  <!-- IRPF 2026 -->
   <section id="irpf2026" style="display:none; text-align:center;">
     <h2 class="section-title">Imposto de Renda Pessoa Física 2026</h2>
     <p style="font-size:18px; max-width:700px; margin:0 auto 30px;">
@@ -250,8 +244,6 @@
     </p>
     <img src="irpf2026.png" alt="Declaração Imposto de Renda 2026 São Gonçalo RJ - VX Contabilidade" loading="lazy" onclick="openLightbox(this.src)" style="cursor:pointer;">
   </section>
-
-  <!-- Sobre -->
   <section id="sobre" style="display:none;">
     <h2 class="section-title">Sobre a VX Contabilidade em São Gonçalo</h2>
     <div class="about-section">
@@ -286,8 +278,6 @@
       <div class="dots" id="dots"></div>
     </div>
   </section>
-
-  <!-- Contato -->
   <section id="contato" style="display:none;">
     <h2 class="section-title">Entre em Contato com a VX Contabilidade</h2>
     <div class="contact-form">
@@ -304,12 +294,13 @@
       <a href="https://www.instagram.com/vx_contabilidade?igsh=MTlodHh0OTliMWh1dg==" target="_blank"><img src="insta.png" alt="Instagram VX Contabilidade" loading="lazy" style="width:40px; margin:0 10px;"></a>
       <a href="https://wa.me/5521985430782" target="_blank"><img src="whats.png" alt="WhatsApp VX Contabilidade" loading="lazy" style="width:40px; margin:0 10px;"></a>
     </div>
+    <div class="email-contact">
+      <p>E-mail: <a href="mailto:vxcontabilidade@gmail.com">vxcontabilidade@gmail.com</a></p>
+    </div>
     <div class="map" style="text-align:center;">
       <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d470585.5722958972!2d-43.6084183!3d-22.8598374!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6369bd747cd8ab49%3A0x9b2e7a2aeaa65670!2sVX%20Contabilidade!5e0!3m2!1spt-BR!2sbr!4v1751071132714!5m2!1spt-BR!2sbr" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </section>
-
-  <!-- MEI -->
   <section id="mei" style="display:none;">
     <h2 class="section-title">Como Abrir MEI em São Gonçalo</h2>
     <div style="max-width:800px; margin:0 auto; padding:20px; text-align:justify;">
@@ -326,8 +317,6 @@
       </div>
     </div>
   </section>
-
-  <!-- IRPF Dicas -->
   <section id="irpf-dicas" style="display:none;">
     <h2 class="section-title">Imposto de Renda 2026 - Dicas Atualizadas</h2>
     <div style="max-width:800px; margin:0 auto; padding:20px; text-align:justify;">
@@ -344,25 +333,21 @@
             <li><strong>Dicas:</strong> Não deixe para a última hora para evitar lentidão e erros no sistema.</li>
       </ul>
       <div style="text-align:center; margin:40px 0;">
-        <a href="https://wa.me/5521985430782?text=Ol%C3%A1!%20Quero%20ajuda%20com%20minha%20Declara%C3%A7%C3%A3o%20de%20Imposto%20de%20Renda%202026%20em%20S%C3%A3o%20Gon%C3%A7alo!" class="promo-button">Agendar a minha Declaração Agora</a>
+        <a href="https://wa.me/5521985430782?text=Ol%C3%A1!%20Quero%20ajuda%20com%20minha%20Declara%C3%A7%C3%A3o%20de%20Imposto%20de%20Renda%202026%20em%20S%C3%A3o%20Gon%C3%A7alo!" class="promo-button">Fazer minha Declaração Agora</a>
       </div>
     </div>
   </section>
 </main>
-
 <footer class="footer">
   <p>© 2025-2026 VX Contabilidade | Contador em São Gonçalo RJ | Todos os direitos reservados.</p>
 </footer>
-
 <div id="lightbox" class="lightbox" onclick="closeLightbox(event)" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.92); z-index:2000; justify-content:center; align-items:center; cursor:pointer;">
   <span class="close-btn" onclick="closeLightbox()" style="position:absolute; top:20px; right:25px; color:#fff; font-size:48px; cursor:pointer;">×</span>
   <img id="lightbox-img" src="" alt="Imagem ampliada" style="max-width:94%; max-height:94vh; object-fit:contain; border-radius:8px;">
 </div>
-
 <a href="https://wa.me/5521985430782?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20contabilidade%20em%20S%C3%A3o%20Gon%C3%A7alo" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
   <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="Fale no WhatsApp VX Contabilidade">
 </a>
-
 <script>
 function toggleMenu() {
   document.querySelector('.mobile-menu').classList.toggle('active');
