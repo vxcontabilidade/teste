@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contabilidade em São Gonçalo | MEI | Simples Nacional | VX Contabilidade</title>
-  <meta name="description" content="Contabilidade em São Gonçalo RJ: abertura de MEI grátis, Simples Nacional, Imposto de Renda 2026 (prazo 23/03 a 29/05), cálculos trabalhistas e regularização de débitos. Contador Vitor Xavier.">
+  <title>Contabilidade em São Gonçalo | MEI Grátis | Simples Nacional | VX Contabilidade</title>
+  <meta name="description" content="Contador em São Gonçalo RJ: abertura de MEI grátis, Simples Nacional, Imposto de Renda 2026 (prazo 23/03 a 29/05), cálculos trabalhistas e regularização de débitos. Contador Vitor Xavier.">
   <meta name="keywords" content="contabilidade São Gonçalo, contador São Gonçalo, abrir MEI São Gonçalo grátis, Simples Nacional São Gonçalo, imposto de renda São Gonçalo 2026, MEI Rio de Janeiro, contabilidade Niterói">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.vxcontabilidade.com.br">
@@ -19,7 +19,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family:'Roboto',Arial,sans-serif; line-height:1.6; color:#333; background:#fff; min-height:100vh; display:flex; flex-direction:column; }
+    html { scroll-behavior: smooth; }
+    body { font-family:'Roboto',Arial,sans-serif; line-height:1.6; color:#333; background:#fff; min-height:100vh; }
     .header { background:#2c7873; padding:15px 20px; position:fixed; width:100%; top:0; z-index:1000; box-shadow:0 4px 12px rgba(0,0,0,0.15); display:flex; align-items:center; justify-content:space-between; }
     .site-name { color:#f7e8a0; font-size:26px; font-weight:700; }
     .logo img { height:52px; }
@@ -75,28 +76,12 @@
     .email-contact { text-align:center; margin:20px 0; font-size:18px; }
     .email-contact a { color:#2c7873; font-weight:700; text-decoration:none; }
     .email-contact a:hover { text-decoration:underline; }
-    /* Ajustes específicos para a seção Serviços (melhor legibilidade) */
-    .servicos-container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    .image-card h3 {
-      padding: 20px 24px 8px 24px;
-      margin: 0;
-      text-align: center;
-      color: #2c7873;
-      font-size: 21px;
-      font-weight: 700;
-    }
-    .image-card p {
-      padding: 0 24px 28px 24px;
-      margin: 0;
-      text-align: justify;
-      line-height: 1.7;
-      font-size: 16px;
-      color: #444;
-    }
+    .back-to-top { position:fixed; bottom:90px; right:30px; background:#2c7873; color:#f7e8a0; width:50px; height:50px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,0.3); z-index:999; opacity:0; transition:opacity 0.3s; pointer-events:none; }
+    .back-to-top.show { opacity:1; pointer-events:auto; }
+    /* Ajustes para Serviços */
+    .servicos-container { max-width:900px; margin:0 auto; padding:0 20px; }
+    .image-card h3 { padding:20px 24px 8px 24px; margin:0; text-align:center; color:#2c7873; font-size:21px; font-weight:700; }
+    .image-card p { padding:0 24px 28px 24px; margin:0; text-align:justify; line-height:1.7; font-size:16px; color:#444; }
     @media (max-width:768px) {
       .nav-menu { display:none; }
       .hamburger { display:flex; }
@@ -109,35 +94,43 @@
       .about-section { flex-direction:column; }
       .about-section img { max-width:100%; }
       .carousel img { max-height:320px; }
-      .image-card h3 { font-size: 19px; padding: 16px 20px 6px 20px; }
-      .image-card p { padding: 0 20px 24px 20px; font-size: 15px; }
+      .image-card h3 { font-size:19px; padding:16px 20px 6px 20px; }
+      .image-card p { padding:0 20px 24px 20px; font-size:15px; }
     }
   </style>
 </head>
 <body>
+
 <header class="header">
   <div class="site-name">VX Contabilidade</div>
   <div class="logo"><img src="vxlogo.png" alt="VX Contabilidade - Contador em São Gonçalo RJ" loading="lazy"></div>
   <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span><span></span></div>
   <nav class="nav-menu">
-    <a href="#inicio" onclick="showSection('inicio')">Início</a>
-    <a href="#servicos" onclick="showSection('servicos')">Serviços</a>
-    <a href="#mei" onclick="showSection('mei')">MEI</a>
-    <a href="#irpf-dicas" onclick="showSection('irpf-dicas')">Imposto de Renda</a>
-    <a href="#sobre" onclick="showSection('sobre')">Sobre</a>
-    <a href="#contato" onclick="showSection('contato')">Contato</a>
+    <a href="#inicio">Início</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#promocoes">Promoções</a>
+    <a href="#irpf2026">IR 2026</a>
+    <a href="#mei">MEI</a>
+    <a href="#irpf-dicas">Dicas IR</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato">Contato</a>
   </nav>
   <nav class="mobile-menu">
     <span class="close-menu" onclick="toggleMenu()">×</span>
-    <a href="#inicio" onclick="showSection('inicio'); toggleMenu()">Início</a>
-    <a href="#servicos" onclick="showSection('servicos'); toggleMenu()">Serviços</a>
-    <a href="#mei" onclick="showSection('mei'); toggleMenu()">MEI</a>
-    <a href="#irpf-dicas" onclick="showSection('irpf-dicas'); toggleMenu()">Imposto de Renda</a>
-    <a href="#sobre" onclick="showSection('sobre'); toggleMenu()">Sobre</a>
-    <a href="#contato" onclick="showSection('contato'); toggleMenu()">Contato</a>
+    <a href="#inicio" onclick="toggleMenu()">Início</a>
+    <a href="#servicos" onclick="toggleMenu()">Serviços</a>
+    <a href="#promocoes" onclick="toggleMenu()">Promoções</a>
+    <a href="#irpf2026" onclick="toggleMenu()">IR 2026</a>
+    <a href="#mei" onclick="toggleMenu()">MEI</a>
+    <a href="#irpf-dicas" onclick="toggleMenu()">Dicas IR</a>
+    <a href="#sobre" onclick="toggleMenu()">Sobre</a>
+    <a href="#contato" onclick="toggleMenu()">Contato</a>
   </nav>
 </header>
+
 <main class="main-content">
+
+  <!-- INÍCIO -->
   <section id="inicio">
     <div class="hero-image">
       <div class="hero-carousel-container">
@@ -167,8 +160,8 @@
       </div>
     </div>
     <div class="action-buttons">
-      <button class="promo-button" onclick="showSection('promocoes')">Promoções</button>
-      <a href="#irpf2026" class="irpf-button" onclick="showSection('irpf2026')">Imposto de Renda 2026</a>
+      <button class="promo-button" onclick="document.getElementById('promocoes').scrollIntoView({behavior:'smooth'})">Promoções</button>
+      <a href="#irpf2026" class="irpf-button">Imposto de Renda 2026</a>
     </div>
     <h1 class="title">Contabilidade para MEI e Simples Nacional em São Gonçalo</h1>
     <h2 class="subtitle">Serviços contábeis eficientes para o crescimento da sua empresa no RJ</h2>
@@ -177,10 +170,12 @@
       <p>Somos especialistas em <strong>contabilidade para MEI</strong> e <strong>Simples Nacional</strong> em São Gonçalo. Oferecemos abertura de MEI <strong>grátis</strong>, gestão de DAS, cálculos trabalhistas, regularização de débitos, declaração de Imposto de Renda, BPO financeiro e certificado digital.</p>
       <p>Nosso compromisso é simplificar sua rotina contábil, garantir conformidade fiscal e ajudar seu negócio a crescer com segurança.</p>
       <p>Deixe a contabilidade conosco e foque no que você faz de melhor: empreender!</p>
-      <p><a href="#contato" onclick="showSection('contato')">Entre em contato agora</a>!</p>
+      <p><a href="#contato">Entre em contato agora</a>!</p>
     </div>
   </section>
-  <section id="servicos" style="display:none;">
+
+  <!-- SERVIÇOS -->
+  <section id="servicos" class="section">
     <h2 class="section-title">Nossos Serviços de Contabilidade</h2>
     <div class="servicos-container">
       <div class="image-grid">
@@ -227,7 +222,9 @@
       </div>
     </div>
   </section>
-  <section id="promocoes" style="display:none;">
+
+  <!-- PROMOÇÕES -->
+  <section id="promocoes" class="section">
     <h2 class="section-title">Promoções Atuais VX Contabilidade</h2>
     <p style="text-align:center; margin-bottom:40px;">Clique nas imagens para ampliar os detalhes das promoções.</p>
     <div class="promocoes-grid">
@@ -237,14 +234,60 @@
       <div class="promocao-card"><img src="plano4.png" alt="Plano 4 - Promoção VX Contabilidade RJ" loading="lazy" onclick="openLightbox(this.src)" style="cursor:pointer;"></div>
     </div>
   </section>
-  <section id="irpf2026" style="display:none; text-align:center;">
+
+  <!-- IRPF 2026 -->
+  <section id="irpf2026" class="section" style="text-align:center;">
     <h2 class="section-title">Imposto de Renda Pessoa Física 2026</h2>
     <p style="font-size:18px; max-width:700px; margin:0 auto 30px;">
       Prazo oficial: <strong>23 de março a 29 de maio de 2026</strong> (ano-base 2025). Clique na imagem para ampliar.
     </p>
     <img src="irpf2026.png" alt="Declaração Imposto de Renda 2026 São Gonçalo RJ - VX Contabilidade" loading="lazy" onclick="openLightbox(this.src)" style="cursor:pointer;">
   </section>
-  <section id="sobre" style="display:none;">
+
+  <!-- MEI -->
+  <section id="mei" class="section">
+    <h2 class="section-title">Como Abrir MEI em São Gonçalo</h2>
+    <div style="max-width:800px; margin:0 auto; padding:20px; text-align:justify;">
+      <p style="font-size:18px; margin-bottom:30px;">Abertura gratuita e sem burocracia com a VX Contabilidade.</p>
+      <ul style="font-size:17px; line-height:1.8; list-style:disc; padding-left:30px;">
+        <li><strong>Quem pode ser MEI?</strong> Faturamento até R$ 81.000/ano (2026) e atividades permitidas.</li>
+        <li><strong>Vantagens:</strong> Abra seu CNPJ, emita notas fiscais, pague INSS reduzido (a partir de ~R$ 70/mês) e conquiste acesso facilitado a crédito e oportunidades financeiras</li>
+        <li><strong>Documentos:</strong> RG, CPF, comprovante de residência e dados para validação (título de eleitor ou última declaração de IR).</li>
+        <li><strong>Prazo:</strong> Até 48 horas após envio dos documentos.</li>
+        <li><strong>Temos o plano de assessoria ideal para o seu perfil.</strong></li>
+      </ul>
+      <div style="text-align:center; margin:40px 0;">
+        <a href="https://wa.me/5521985430782?text=Ol%C3%A1!%20Quero%20abrir%20meu%20MEI%20gr%C3%A1tis%20em%20S%C3%A3o%20Gon%C3%A7alo!" class="promo-button">Abra seu MEI Agora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DICAS IRPF -->
+  <section id="irpf-dicas" class="section">
+    <h2 class="section-title">Imposto de Renda 2026 - Dicas Atualizadas</h2>
+    <div style="max-width:800px; margin:0 auto; padding:20px; text-align:justify;">
+      <p style="font-size:18px; margin-bottom:30px;">Prazo oficial: <strong>23 de março a 29 de maio de 2026</strong> (ano-base 2025).</p>
+      <ul style="font-size:17px; line-height:1.8; list-style:disc; padding-left:30px;">
+        <li><strong>Quem deve declarar?</strong> Principais critérios:
+          <ul>
+            <li>Rendimentos tributáveis acima de R$ 35.584,00 no ano.</li>
+            <li>Rendimentos isentos/não tributáveis ou tributados na fonte acima de R$ 200.000,00.</li>
+            <li>Bens ou direitos acima de R$ 800.000,00 em 31/12/2025.</li>
+            <li>Outros: ganho de capital sujeito a imposto, operações em bolsa > R$ 40 mil, receita rural > R$ 177.920,00, etc.</li>
+          </ul>
+        </li>
+        <li><strong>Prazo oficial:</strong> 23/03/2026 (8h) a 29/05/2026 (23h59).</li>
+        <li><strong>Restituição:</strong> Em lotes a partir de 29/05/2026 (prioridade para idosos, professores, etc.).</li>
+        <li><strong>Dicas:</strong> Não deixe para a última hora para evitar lentidão e erros no sistema.</li>
+      </ul>
+      <div style="text-align:center; margin:40px 0;">
+        <a href="https://wa.me/5521985430782?text=Ol%C3%A1!%20Quero%20ajuda%20com%20minha%20Declara%C3%A7%C3%A3o%20de%20Imposto%20de%20Renda%202026%20em%20S%C3%A3o%20Gon%C3%A7alo!" class="promo-button">Fazer minha Declaração Agora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="section">
     <h2 class="section-title">Sobre a VX Contabilidade em São Gonçalo</h2>
     <div class="about-section">
       <img src="IMAGEM H.png" alt="Vitor de Oliveira Xavier - Contador CRC-RJ São Gonçalo" loading="lazy">
@@ -253,14 +296,17 @@
       </div>
     </div>
     <div style="max-width:800px; margin:40px auto; text-align:center; padding:0 20px;">
-      <h3 class="section-title">Missão</h3><p>Oferecer serviços contábeis de qualidade, com ética, transparência e comprometimento, ajudando empresas e empreendedores a tomarem decisões estratégicas seguras e sustentáveis. Meu objetivo é simplificar a contabilidade e contribuir para o crescimento e sucesso dos meus clientes. </p>
-      <h3 class="section-title">Visão</h3><p>Ser reconhecido como um contador de referência, construindo relações de confiança e agregando valor aos negócios por meio de soluções contábeis modernas, eficientes e personalizadas. </p>
-      <h3 class="section-title">Valores</h3><p>• Ética e Transparência: honestidade e conformidade com normas contábeis. </p>
-          <p>• Comprometimento: dedicação às necessidades dos clientes. </p>
-          <p>• Inovação: atualização contínua e uso de novas tecnologias. </p>
-          <p>• Foco no Cliente: soluções personalizadas para cada negócio. </p>
-          <p>• Confidencialidade: segurança e privacidade das informações. </p>
-</div>
+      <h3 class="section-title">Missão</h3>
+      <p>Oferecer serviços contábeis de qualidade, com ética, transparência e comprometimento, ajudando empresas e empreendedores a tomarem decisões estratégicas seguras e sustentáveis. Meu objetivo é simplificar a contabilidade e contribuir para o crescimento e sucesso dos meus clientes. </p>
+      <h3 class="section-title">Visão</h3>
+      <p>Ser reconhecido como um contador de referência, construindo relações de confiança e agregando valor aos negócios por meio de soluções contábeis modernas, eficientes e personalizadas. </p>
+      <h3 class="section-title">Valores</h3>
+      <p>• Ética e Transparência: honestidade e conformidade com normas contábeis. </p>
+      <p>• Comprometimento: dedicação às necessidades dos clientes. </p>
+      <p>• Inovação: atualização contínua e uso de novas tecnologias. </p>
+      <p>• Foco no Cliente: soluções personalizadas para cada negócio. </p>
+      <p>• Confidencialidade: segurança e privacidade das informações. </p>
+    </div>
     <h3 class="section-title">Depoimentos de Clientes</h3>
     <div class="carousel-container">
       <div class="carousel" id="carousel">
@@ -278,7 +324,9 @@
       <div class="dots" id="dots"></div>
     </div>
   </section>
-  <section id="contato" style="display:none;">
+
+  <!-- CONTATO -->
+  <section id="contato" class="section">
     <h2 class="section-title">Entre em Contato com a VX Contabilidade</h2>
     <div class="contact-form">
       <h3>Envie sua mensagem direto pelo WhatsApp</h3>
@@ -301,63 +349,33 @@
       <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d470585.5722958972!2d-43.6084183!3d-22.8598374!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6369bd747cd8ab49%3A0x9b2e7a2aeaa65670!2sVX%20Contabilidade!5e0!3m2!1spt-BR!2sbr!4v1751071132714!5m2!1spt-BR!2sbr" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </section>
-  <section id="mei" style="display:none;">
-    <h2 class="section-title">Como Abrir MEI em São Gonçalo</h2>
-    <div style="max-width:800px; margin:0 auto; padding:20px; text-align:justify;">
-      <p style="font-size:18px; margin-bottom:30px;">Abertura gratuita e sem burocracia com a VX Contabilidade.</p>
-      <ul style="font-size:17px; line-height:1.8; list-style:disc; padding-left:30px;">
-        <li><strong>Quem pode ser MEI?</strong> Faturamento até R$ 81.000/ano (2026) e atividades permitidas.</li>
-        <li><strong>Vantagens:</strong> Abra seu CNPJ, emita notas fiscais, pague INSS reduzido (a partir de ~R$ 70/mês) e conquiste acesso facilitado a crédito e oportunidades financeiras</li>
-        <li><strong>Documentos:</strong> RG, CPF, comprovante de residência e dados para validação (título de eleitor ou última declaração de IR).</li>
-        <li><strong>Prazo:</strong> Até 48 horas após envio dos documentos.</li>
-        <li><strong>Temos o plano de assessoria ideal para o seu perfil.</strong></li>
-      </ul>
-      <div style="text-align:center; margin:40px 0;">
-        <a href="https://wa.me/5521985430782?text=Ol%C3%A1!%20Quero%20abrir%20meu%20MEI%20gr%C3%A1tis%20em%20S%C3%A3o%20Gon%C3%A7alo!" class="promo-button">Abra seu MEI Agora</a>
-      </div>
-    </div>
-  </section>
-  <section id="irpf-dicas" style="display:none;">
-    <h2 class="section-title">Imposto de Renda 2026 - Dicas Atualizadas</h2>
-    <div style="max-width:800px; margin:0 auto; padding:20px; text-align:justify;">
-      <p style="font-size:18px; margin-bottom:30px;">Prazo oficial: <strong>23 de março a 29 de maio de 2026</strong> (ano-base 2025).</p>
-      <ul style="font-size:17px; line-height:1.8; list-style:disc; padding-left:30px;">
-        <li><strong>Quem deve declarar?</strong> Principais critérios:
-          <ul>
-            <li>Rendimentos tributáveis acima de R$ 35.584,00 no ano.</li>
-            <li>Rendimentos isentos/não tributáveis ou tributados na fonte acima de R$ 200.000,00.</li>
-            <li>Bens ou direitos acima de R$ 800.000,00 em 31/12/2025.</li>
-            <li>Outros: ganho de capital sujeito a imposto, operações em bolsa > R$ 40 mil, receita rural > R$ 177.920,00, etc.</li>
-            <li><strong>Prazo oficial:</strong> 23/03/2026 (8h) a 29/05/2026 (23h59).</li>
-            <li><strong>Restituição:</strong> Em lotes a partir de 29/05/2026 (prioridade para idosos, professores, etc.).</li>
-            <li><strong>Dicas:</strong> Não deixe para a última hora para evitar lentidão e erros no sistema.</li>
-      </ul>
-      <div style="text-align:center; margin:40px 0;">
-        <a href="https://wa.me/5521985430782?text=Ol%C3%A1!%20Quero%20ajuda%20com%20minha%20Declara%C3%A7%C3%A3o%20de%20Imposto%20de%20Renda%202026%20em%20S%C3%A3o%20Gon%C3%A7alo!" class="promo-button">Fazer minha Declaração Agora</a>
-      </div>
-    </div>
-  </section>
+
 </main>
+
 <footer class="footer">
-  <p>© 2025-2026 VX Contabilidade | Contador em São Gonçalo RJ | Todos os direitos reservados.</p>
+  <p>© 2025-2026 VX Contabilidade | Contador em São Gonçalo RJ | vxcontabilidade@gmail.com | Todos os direitos reservados.</p>
 </footer>
+
+<!-- Lightbox -->
 <div id="lightbox" class="lightbox" onclick="closeLightbox(event)" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.92); z-index:2000; justify-content:center; align-items:center; cursor:pointer;">
   <span class="close-btn" onclick="closeLightbox()" style="position:absolute; top:20px; right:25px; color:#fff; font-size:48px; cursor:pointer;">×</span>
   <img id="lightbox-img" src="" alt="Imagem ampliada" style="max-width:94%; max-height:94vh; object-fit:contain; border-radius:8px;">
 </div>
+
+<!-- WhatsApp Float -->
 <a href="https://wa.me/5521985430782?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20contabilidade%20em%20S%C3%A3o%20Gon%C3%A7alo" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
   <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="Fale no WhatsApp VX Contabilidade">
 </a>
+
+<!-- Botão Voltar ao Topo -->
+<div class="back-to-top" id="backToTop">↑</div>
+
 <script>
+// Toggle menu mobile
 function toggleMenu() {
   document.querySelector('.mobile-menu').classList.toggle('active');
 }
-function showSection(id) {
-  document.querySelectorAll('section[id]').forEach(s => s.style.display = 'none');
-  const target = document.getElementById(id);
-  if (target) target.style.display = 'block';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
+
 // Hero Carousel
 let heroIndex = 0;
 const heroCarousel = document.getElementById('hero-carousel');
@@ -366,10 +384,17 @@ function updateHeroSlide() {
   const perView = isMobile ? 1 : 3;
   heroCarousel.style.transform = `translateX(-${heroIndex * (100 / perView)}%)`;
 }
-function nextHeroSlide() { heroIndex = (heroIndex + 1) % 19; updateHeroSlide(); }
-function prevHeroSlide() { heroIndex = (heroIndex - 1 + 19) % 19; updateHeroSlide(); }
+function nextHeroSlide() { 
+  heroIndex = (heroIndex + 1) % 19; 
+  updateHeroSlide(); 
+}
+function prevHeroSlide() { 
+  heroIndex = (heroIndex - 1 + 19) % 19; 
+  updateHeroSlide(); 
+}
 setInterval(nextHeroSlide, 4000);
 window.addEventListener('resize', updateHeroSlide);
+
 // Depoimentos Carousel
 let depIndex = 0;
 const depCarousel = document.getElementById('carousel');
@@ -392,7 +417,8 @@ function nextDep() {
   document.querySelectorAll('.dot').forEach((d, idx) => d.classList.toggle('active', idx === depIndex));
 }
 setInterval(nextDep, 5000);
-// WhatsApp envio
+
+// Envio WhatsApp
 function sendToWhatsApp() {
   const name = document.getElementById('wa-name')?.value.trim() || 'Cliente';
   const phone = document.getElementById('wa-phone')?.value.trim();
@@ -401,10 +427,11 @@ function sendToWhatsApp() {
   if (phone) text += ` Telefone: ${phone}.`;
   text += ` ${msg}`;
   window.open(`https://wa.me/5521985430782?text=${encodeURIComponent(text)}`, '_blank');
-  if (document.getElementById('wa-name')) document.getElementById('wa-name').value = '';
-  if (document.getElementById('wa-phone')) document.getElementById('wa-phone').value = '';
-  if (document.getElementById('wa-message')) document.getElementById('wa-message').value = '';
+  document.getElementById('wa-name').value = '';
+  document.getElementById('wa-phone').value = '';
+  document.getElementById('wa-message').value = '';
 }
+
 // Lightbox
 function openLightbox(src) {
   document.getElementById('lightbox-img').src = src;
@@ -417,10 +444,13 @@ function closeLightbox(e) {
     document.body.style.overflow = '';
   }
 }
-// Inicialização
-window.addEventListener('load', () => {
-  const hash = location.hash.replace('#','');
-  showSection(hash || 'inicio');
+
+// Botão voltar ao topo
+document.getElementById('backToTop').addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+window.addEventListener('scroll', () => {
+  document.getElementById('backToTop').classList.toggle('show', window.scrollY > 400);
 });
 </script>
 </body>
