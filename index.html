@@ -8,7 +8,7 @@
   <meta name="keywords" content="contabilidade São Gonçalo, contador São Gonçalo, abrir MEI São Gonçalo grátis, Simples Nacional São Gonçalo, imposto de renda São Gonçalo 2026, MEI Rio de Janeiro, contabilidade Niterói">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.vxcontabilidade.com.br/">
-  
+
   <!-- Favicon -->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -41,60 +41,72 @@
     .whatsapp-float:hover { transform:scale(1.15); box-shadow:0 10px 25px rgba(0,0,0,0.45); }
     .whatsapp-float img { width:45px; height:45px; }
 
-    /* Hero Carousel - 1 imagem por vez, centralizada */
-    .hero-image { width:100vw; margin-left:calc(-50vw + 50%); overflow:hidden; position:relative; }
-    .hero-carousel-container { position:relative; width:100%; max-width:1200px; margin:0 auto; }
-    .hero-carousel { display:flex; transition:transform 0.6s ease-in-out; }
+    /* Hero Carousel - IMAGEM MENOR E CONTROLADA NO DESKTOP */
+    .hero-image { 
+      width: 100%; 
+      padding: 20px 0; 
+      background: #f8f9fa; /* fundo claro opcional */
+    }
+    .hero-carousel-container { 
+      position: relative; 
+      width: 100%; 
+      max-width: 1000px;          /* largura máxima no desktop - ajuste aqui se quiser */
+      margin: 0 auto; 
+      overflow: hidden; 
+    }
+    .hero-carousel { 
+      display: flex; 
+      transition: transform 0.6s ease-in-out; 
+    }
     .hero-carousel img { 
-      width:100%; 
-      height:auto; 
-      max-height:70vh; 
-      object-fit:contain; 
-      flex-shrink:0; 
-      display:block; 
+      width: 100%; 
+      height: auto; 
+      max-height: 500px;          /* altura máxima controlada - ajuste aqui se necessário */
+      object-fit: contain; 
+      flex-shrink: 0; 
+      display: block; 
+      margin: 0 auto; 
     }
 
-    /* Botões fora da imagem - nas laterais da tela */
+    /* Botões laterais - fora da área da imagem */
     .carousel-btn { 
-      position:absolute; 
-      top:50%; 
-      transform:translateY(-50%); 
-      background:rgba(44,120,115,0.75); 
-      color:#f7e8a0; 
-      border:none; 
-      width:60px; 
-      height:60px; 
-      font-size:36px; 
-      border-radius:50%; 
-      cursor:pointer; 
-      z-index:20; 
-      box-shadow:0 6px 18px rgba(0,0,0,0.4); 
-      display:flex; 
-      align-items:center; 
-      justify-content:center; 
-      transition:all 0.3s; 
+      position: absolute; 
+      top: 50%; 
+      transform: translateY(-50%); 
+      background: rgba(44,120,115,0.8); 
+      color: #f7e8a0; 
+      border: none; 
+      width: 60px; 
+      height: 60px; 
+      font-size: 36px; 
+      border-radius: 50%; 
+      cursor: pointer; 
+      z-index: 20; 
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4); 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      transition: all 0.3s; 
     }
     .carousel-btn:hover { 
-      background:#2c7873; 
-      transform:translateY(-50%) scale(1.12); 
+      background: #2c7873; 
+      transform: translateY(-50%) scale(1.12); 
     }
-    .carousel-btn.left  { left:15px; }
-    .carousel-btn.right { right:15px; }
+    .carousel-btn.left  { left: 10px; }
+    .carousel-btn.right { right: 10px; }
 
-    /* Mobile: botões menores e nas bordas extremas */
-    @media (max-width:768px) {
+    /* Mobile */
+    @media (max-width: 768px) {
+      .hero-carousel-container { max-width: 100%; }
+      .hero-carousel img { max-height: 55vh; }
       .carousel-btn { 
-        width:50px; 
-        height:50px; 
-        font-size:28px; 
-        background:rgba(44,120,115,0.65); 
+        width: 50px; 
+        height: 50px; 
+        font-size: 28px; 
+        background: rgba(44,120,115,0.7); 
       }
-      .carousel-btn.left  { left:8px; }
-      .carousel-btn.right { right:8px; }
-      .hero-carousel img { 
-        max-height:60vh; 
-        object-fit:contain; 
-      }
+      .carousel-btn.left  { left: 5px; }
+      .carousel-btn.right { right: 5px; }
     }
 
     .title { text-align:center; font-size:38px; font-weight:700; margin:40px 0 10px; }
@@ -155,9 +167,9 @@
     <a href="#inicio">Início</a>
     <a href="#servicos">Serviços</a>
     <a href="#promocoes">Promoções</a>
-    <a href="#irpf-dicas"> Dicas IR</a>
+    <a href="#irpf2026">IR 2026</a>
     <a href="#mei">MEI</a>
-    <a href="#irpf2026"> IR 2026</a>
+    <a href="#irpf-dicas">Dicas IR</a>
     <a href="#sobre">Sobre</a>
     <a href="#contato">Contato</a>
   </nav>
@@ -396,7 +408,7 @@ function toggleMenu() {
   document.querySelector('.mobile-menu').classList.toggle('active');
 }
 
-// Hero Carousel - 1 imagem por vez
+// Hero Carousel - 1 imagem por vez, tamanho controlado
 let heroIndex = 0;
 const heroCarousel = document.getElementById('hero-carousel');
 function updateHeroSlide() {
@@ -410,7 +422,7 @@ function prevHeroSlide() {
   heroIndex = (heroIndex - 1 + heroCarousel.children.length) % heroCarousel.children.length;
   updateHeroSlide();
 }
-setInterval(nextHeroSlide, 5000); // 5 segundos
+setInterval(nextHeroSlide, 5000);
 window.addEventListener('resize', updateHeroSlide);
 
 // Depoimentos Carousel
