@@ -3,64 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Título otimizado para CTR alto em buscas locais -->
   <title>Contabilidade em São Gonçalo RJ | Abertura MEI Grátis | Simples Nacional | VX Contabilidade</title>
-  <meta name="description" content="Contador em São Gonçalo RJ: abertura de MEI grátis, Simples Nacional, Imposto de Renda 2026 (prazo 23/03 a 29/05), cálculos trabalhistas e regularização de débitos. Vitor Xavier - CRC-RJ 137627/O-4. Atendimento em São Gonçalo e Niterói.">
-  <meta name="keywords" content="contabilidade São Gonçalo, contador São Gonçalo, abrir MEI São Gonçalo grátis, Simples Nacional São Gonçalo, imposto de renda São Gonçalo 2026, MEI Rio de Janeiro, contabilidade Niterói, regularização débitos São Gonçalo">
+  <meta name="description" content="Contador em São Gonçalo RJ: abertura de MEI grátis, Simples Nacional, Imposto de Renda 2026 (prazo 23/03 a 29/05), cálculos trabalhistas e regularização de débitos. Vitor Xavier - CRC-RJ 137627/O-4.">
+  <meta name="keywords" content="contabilidade São Gonçalo, contador São Gonçalo, abrir MEI São Gonçalo grátis, Simples Nacional São Gonçalo, imposto de renda São Gonçalo 2026, MEI Rio de Janeiro, contabilidade Niterói">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.vxcontabilidade.com.br/">
   
-  <!-- Favicon - várias versões para suporte completo -->
+  <!-- Favicon -->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
-
-  <!-- SEO Local + Schema (ajuda no Google Maps e rich snippets) -->
-  <meta name="geo.region" content="BR-RJ">
-  <meta name="geo.placename" content="São Gonçalo">
-  <meta name="geo.position" content="-22.8598374;-43.6084183">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "VX Contabilidade",
-    "image": "https://www.vxcontabilidade.com.br/vxlogo.png",
-    "@id": "",
-    "url": "https://www.vxcontabilidade.com.br/",
-    "telephone": "+5521985430782",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Endereço completo",
-      "addressLocality": "São Gonçalo",
-      "addressRegion": "RJ",
-      "postalCode": "24400-000",
-      "addressCountry": "BR"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": -22.8598374,
-      "longitude": -43.6084183
-    },
-    "openingHoursSpecification": {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "09:00",
-      "closes": "18:00"
-    },
-    "sameAs": ["https://www.instagram.com/vx_contabilidade"]
-  }
-  </script>
-
-  <!-- Open Graph e Twitter Cards -->
-  <meta property="og:title" content="Contabilidade em São Gonçalo RJ | Abertura MEI Grátis | VX Contabilidade">
-  <meta property="og:description" content="Especialista em abertura de MEI grátis, declaração IRPF 2026 (23/03–29/05), Simples Nacional e serviços contábeis em São Gonçalo e região RJ.">
-  <meta property="og:image" content="https://www.vxcontabilidade.com.br/vxlogo.png">
-  <meta property="og:url" content="https://www.vxcontabilidade.com.br/">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="pt_BR">
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
@@ -87,15 +40,63 @@
     .whatsapp-float { position:fixed; bottom:25px; right:25px; width:65px; height:65px; background:#25d366; border-radius:50%; box-shadow:0 6px 20px rgba(0,0,0,0.35); z-index:9999; display:flex; align-items:center; justify-content:center; transition:all 0.3s; }
     .whatsapp-float:hover { transform:scale(1.15); box-shadow:0 10px 25px rgba(0,0,0,0.45); }
     .whatsapp-float img { width:45px; height:45px; }
-    .hero-image { width:100vw; margin-left:calc(-50vw + 50%); margin-right:calc(-50vw + 50%); overflow:hidden; }
-    .hero-carousel-container { position:relative; width:100%; }
+
+    /* Hero Carousel - 1 imagem por vez, centralizada */
+    .hero-image { width:100vw; margin-left:calc(-50vw + 50%); overflow:hidden; position:relative; }
+    .hero-carousel-container { position:relative; width:100%; max-width:1200px; margin:0 auto; }
     .hero-carousel { display:flex; transition:transform 0.6s ease-in-out; }
-    .hero-carousel img { width:33.33%; height:auto; object-fit:cover; flex-shrink:0; }
-    @media (max-width:768px) { .hero-carousel img { width:100%; } }
-    .carousel-btn { position:absolute; top:50%; transform:translateY(-50%); background:rgba(44,120,115,0.85); color:#f7e8a0; border:none; width:58px; height:58px; font-size:32px; border-radius:50%; cursor:pointer; z-index:20; box-shadow:0 6px 18px rgba(0,0,0,0.3); display:flex; align-items:center; justify-content:center; transition:all 0.3s; }
-    .carousel-btn:hover { background:#2c7873; transform:translateY(-50%) scale(1.1); }
-    .carousel-btn.left { left:20px; }
-    .carousel-btn.right { right:20px; }
+    .hero-carousel img { 
+      width:100%; 
+      height:auto; 
+      max-height:70vh; 
+      object-fit:contain; 
+      flex-shrink:0; 
+      display:block; 
+    }
+
+    /* Botões fora da imagem - nas laterais da tela */
+    .carousel-btn { 
+      position:absolute; 
+      top:50%; 
+      transform:translateY(-50%); 
+      background:rgba(44,120,115,0.75); 
+      color:#f7e8a0; 
+      border:none; 
+      width:60px; 
+      height:60px; 
+      font-size:36px; 
+      border-radius:50%; 
+      cursor:pointer; 
+      z-index:20; 
+      box-shadow:0 6px 18px rgba(0,0,0,0.4); 
+      display:flex; 
+      align-items:center; 
+      justify-content:center; 
+      transition:all 0.3s; 
+    }
+    .carousel-btn:hover { 
+      background:#2c7873; 
+      transform:translateY(-50%) scale(1.12); 
+    }
+    .carousel-btn.left  { left:15px; }
+    .carousel-btn.right { right:15px; }
+
+    /* Mobile: botões menores e nas bordas extremas */
+    @media (max-width:768px) {
+      .carousel-btn { 
+        width:50px; 
+        height:50px; 
+        font-size:28px; 
+        background:rgba(44,120,115,0.65); 
+      }
+      .carousel-btn.left  { left:8px; }
+      .carousel-btn.right { right:8px; }
+      .hero-carousel img { 
+        max-height:60vh; 
+        object-fit:contain; 
+      }
+    }
+
     .title { text-align:center; font-size:38px; font-weight:700; margin:40px 0 10px; }
     .subtitle { text-align:center; font-size:24px; margin-bottom:40px; }
     .section-title { text-align:center; font-size:32px; font-weight:700; margin:50px 0 30px; color:#2c7873; }
@@ -125,7 +126,6 @@
     .email-contact a:hover { text-decoration:underline; }
     .back-to-top { position:fixed; bottom:90px; right:30px; background:#2c7873; color:#f7e8a0; width:50px; height:50px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,0.3); z-index:999; opacity:0; transition:opacity 0.3s; pointer-events:none; }
     .back-to-top.show { opacity:1; pointer-events:auto; }
-    /* Ajustes para Serviços */
     .servicos-container { max-width:900px; margin:0 auto; padding:0 20px; }
     .image-card h3 { padding:20px 24px 8px 24px; margin:0; text-align:center; color:#2c7873; font-size:21px; font-weight:700; }
     .image-card p { padding:0 24px 28px 24px; margin:0; text-align:justify; line-height:1.7; font-size:16px; color:#444; }
@@ -134,7 +134,6 @@
       .hamburger { display:flex; }
       .title { font-size:28px; }
       .subtitle { font-size:20px; }
-      .carousel-btn { width:48px; height:48px; font-size:26px; }
       .contact-form { padding:25px; }
       .image-grid, .promocoes-grid { grid-template-columns:1fr; }
       .image-card img, .promocao-card img { max-height:340px; }
@@ -156,9 +155,9 @@
     <a href="#inicio">Início</a>
     <a href="#servicos">Serviços</a>
     <a href="#promocoes">Promoções</a>
-    <a href="#irpf2026">IR 2026</a>
+    <a href="#irpf-dicas"> Dicas IR</a>
     <a href="#mei">MEI</a>
-    <a href="#irpf-dicas">Dicas IR</a>
+    <a href="#irpf2026"> IR 2026</a>
     <a href="#sobre">Sobre</a>
     <a href="#contato">Contato</a>
   </nav>
@@ -181,33 +180,15 @@
     <div class="hero-image">
       <div class="hero-carousel-container">
         <div class="hero-carousel" id="hero-carousel">
-          <img src="IMAGEM AA.png" alt="Contabilidade para MEI em São Gonçalo RJ - VX Contabilidade" loading="lazy">
-          <img src="IMAGEM AB.png" alt="Simples Nacional em São Gonçalo - Contador VX" loading="lazy">
-          <img src="IMAGEM AC.png" alt="Abertura de MEI grátis em São Gonçalo RJ" loading="lazy">
-          <img src="IMAGEM AD.png" alt="Imposto de Renda São Gonçalo RJ 2026 - VX Contabilidade" loading="lazy">
-          <img src="IMAGEM AE.png" alt="Contabilidade Simples Nacional São Gonçalo" loading="lazy">
           <img src="IMAGEM AA.png" alt="Contabilidade para MEI em São Gonçalo RJ" loading="lazy">
           <img src="IMAGEM AB.png" alt="Simples Nacional em São Gonçalo" loading="lazy">
           <img src="IMAGEM AC.png" alt="Abertura de MEI grátis São Gonçalo" loading="lazy">
           <img src="IMAGEM AD.png" alt="Imposto de Renda São Gonçalo RJ" loading="lazy">
           <img src="IMAGEM AE.png" alt="Contabilidade Simples Nacional São Gonçalo" loading="lazy">
-          <img src="IMAGEM AA.png" alt="Contabilidade para MEI em São Gonçalo RJ" loading="lazy">
-          <img src="IMAGEM AB.png" alt="Simples Nacional em São Gonçalo" loading="lazy">
-          <img src="IMAGEM AC.png" alt="Abertura de MEI grátis São Gonçalo" loading="lazy">
-          <img src="IMAGEM AD.png" alt="Imposto de Renda São Gonçalo RJ" loading="lazy">
-          <img src="IMAGEM AE.png" alt="Contabilidade Simples Nacional São Gonçalo" loading="lazy">
-          <img src="IMAGEM AA.png" alt="Contabilidade para MEI em São Gonçalo RJ" loading="lazy">
-          <img src="IMAGEM AB.png" alt="Simples Nacional em São Gonçalo" loading="lazy">
-          <img src="IMAGEM AC.png" alt="Abertura de MEI grátis São Gonçalo" loading="lazy">
-          <img src="IMAGEM AD.png" alt="Imposto de Renda São Gonçalo RJ" loading="lazy">
         </div>
         <button class="carousel-btn left" onclick="prevHeroSlide()">❮</button>
         <button class="carousel-btn right" onclick="nextHeroSlide()">❯</button>
       </div>
-    </div>
-    <div class="action-buttons">
-      <button class="promo-button" onclick="document.getElementById('promocoes').scrollIntoView({behavior:'smooth'})">Promoções</button>
-      <a href="#irpf2026" class="irpf-button">Imposto de Renda 2026</a>
     </div>
     <h1 class="title">Contabilidade para MEI e Simples Nacional em São Gonçalo</h1>
     <h2 class="subtitle">Serviços contábeis eficientes para o crescimento da sua empresa no RJ</h2>
@@ -220,12 +201,13 @@
     </div>
   </section>
 
+  <!-- SERVIÇOS -->
   <section id="servicos">
     <h2 class="section-title">Nossos Serviços de Contabilidade</h2>
     <div class="servicos-container">
       <div class="image-grid">
         <div class="image-card">
-          <img src="IMAGEM B.png" alt="Abertura de MEI grátis em São Gonçalo RJ - VX Contabilidade" loading="lazy">
+          <img src="IMAGEM B.png" alt="Abertura de MEI grátis em São Gonçalo RJ" loading="lazy">
           <h3>Abertura de MEI Grátis</h3>
           <p>Formalize o seu negócio como MEI sem custos! Obtenha CNPJ, emita notas fiscais, acesse crédito empresarial e tenha direitos previdenciários com a nossa assessoria completa.</p>
         </div>
@@ -235,12 +217,12 @@
           <p>Gerenciamos o seu DAS mensalmente e entregamos a Declaração Anual dentro do prazo legal. Fornecemos planilhas de gestão da lucratividade e gestão do estoque para o acompanhamento e crescimento do seu negócio.</p>
         </div>
         <div class="image-card">
-          <img src="IMAGEM D.png" alt="Contabilidade Simples Nacional em São Gonçalo RJ - VX" loading="lazy">
+          <img src="IMAGEM D.png" alt="Contabilidade Simples Nacional em São Gonçalo RJ" loading="lazy">
           <h3>Simples Nacional</h3>
           <p>Contabilidade completa para empresas do Simples Nacional com apuração de impostos, folha de pagamento e consultoria tributária. Foco na conformidade e crescimento do seu negócio.</p>
         </div>
         <div class="image-card">
-          <img src="IMAGEM E.png" alt="Declaração de Imposto de Renda em São Gonçalo - VX Contabilidade" loading="lazy">
+          <img src="IMAGEM E.png" alt="Declaração de Imposto de Renda em São Gonçalo" loading="lazy">
           <h3>Imposto de Renda</h3>
           <p>Declaração de Imposto de Renda para Pessoa Física e MEI com precisão e segurança. Evite a malha fina com a nossa análise detalhada e maximize as suas deduções legais.</p>
         </div>
@@ -250,17 +232,17 @@
           <p>Emissão e renovação de certificados e-CPF e e-CNPJ (A1 e A3) com agilidade e suporte completo. Atendimento presencial ou por videoconferência. </p>
         </div>
         <div class="image-card">
-          <img src="IMAGEM G.png" alt="Cálculos trabalhistas em São Gonçalo RJ - VX Contabilidade" loading="lazy">
+          <img src="IMAGEM G.png" alt="Cálculos trabalhistas em São Gonçalo RJ" loading="lazy">
           <h3>Cálculos Trabalhistas</h3>
           <p>Realizamos cálculos de rescisões, horas extras, férias, 13º, FGTS e outras verbas trabalhistas. Elaboramos laudos claros e ágeis para processos judiciais e extrajudiciais. </p>
         </div>
         <div class="image-card">
-          <img src="IMAGEM I.png" alt="BPO Financeiro em São Gonçalo - VX Contabilidade" loading="lazy">
+          <img src="IMAGEM I.png" alt="BPO Financeiro em São Gonçalo" loading="lazy">
           <h3>BPO Financeiro</h3>
           <p>O nosso BPO Financeiro ajuda empreendedores a organizarem suas finanças sem precisar contratar equipe interna. Inclui controle de contas a pagar e receber, emissão de boletos e notas fiscais. </p>
         </div>
         <div class="image-card">
-          <img src="IMAGEM J.png" alt="Regularização de débitos tributários em São Gonçalo - VX" loading="lazy">
+          <img src="IMAGEM J.png" alt="Regularização de débitos tributários em São Gonçalo" loading="lazy">
           <h3>Regularização de Débitos</h3>
           <p>Precisa regularizar débitos tributários? Nós cuidamos de todo o processo com segurança e agilidade. Evite multas, bloqueios e restrições no CPF ou CNPJ. </p>
         </div>
@@ -268,17 +250,19 @@
     </div>
   </section>
 
+  <!-- PROMOÇÕES -->
   <section id="promocoes">
     <h2 class="section-title">Promoções Atuais VX Contabilidade</h2>
     <p style="text-align:center; margin-bottom:40px;">Clique nas imagens para ampliar os detalhes das promoções.</p>
     <div class="promocoes-grid">
-      <div class="promocao-card"><img src="plano1.png" alt="Plano 1 - Promoção contabilidade São Gonçalo - VX" loading="lazy" onclick="openLightbox(this.src)" style="cursor:pointer;"></div>
-      <div class="promocao-card"><img src="plano2.png" alt="Plano 2 - Promoção MEI e Simples Nacional - VX Contabilidade" loading="lazy" onclick="openLightbox(this.src)" style="cursor:pointer;"></div>
-      <div class="promocao-card"><img src="plano3.png" alt="Plano 3 - Promoção Imposto de Renda São Gonçalo - VX" loading="lazy" onclick="openLightbox(this.src)" style="cursor:pointer;"></div>
+      <div class="promocao-card"><img src="plano1.png" alt="Plano 1 - Promoção contabilidade São Gonçalo" loading="lazy" onclick="openLightbox(this.src)" style="cursor:pointer;"></div>
+      <div class="promocao-card"><img src="plano2.png" alt="Plano 2 - Promoção MEI e Simples Nacional" loading="lazy" onclick="openLightbox(this.src)" style="cursor:pointer;"></div>
+      <div class="promocao-card"><img src="plano3.png" alt="Plano 3 - Promoção Imposto de Renda São Gonçalo" loading="lazy" onclick="openLightbox(this.src)" style="cursor:pointer;"></div>
       <div class="promocao-card"><img src="plano4.png" alt="Plano 4 - Promoção VX Contabilidade RJ" loading="lazy" onclick="openLightbox(this.src)" style="cursor:pointer;"></div>
     </div>
   </section>
 
+  <!-- IRPF 2026 -->
   <section id="irpf2026" style="text-align:center;">
     <h2 class="section-title">Imposto de Renda Pessoa Física 2026</h2>
     <p style="font-size:18px; max-width:700px; margin:0 auto 30px;">
@@ -287,6 +271,7 @@
     <img src="irpf2026.png" alt="Declaração Imposto de Renda 2026 São Gonçalo RJ - VX Contabilidade" loading="lazy" onclick="openLightbox(this.src)" style="cursor:pointer;">
   </section>
 
+  <!-- MEI -->
   <section id="mei">
     <h2 class="section-title">Como Abrir MEI em São Gonçalo</h2>
     <div style="max-width:800px; margin:0 auto; padding:20px; text-align:justify;">
@@ -299,11 +284,12 @@
         <li><strong>Temos o plano de assessoria ideal para o seu perfil.</strong></li>
       </ul>
       <div style="text-align:center; margin:40px 0;">
-        <a href="https://wa.me/5521985430782?text=Ol%C3%A1!%20Quero%20abrir%20meu%20MEI%20gr%C3%A1tis%20em%20S%C3%A3o%20Gon%C3%A7alo!" class="promo-button">Abra seu MEI Agora</a>
+        <a href="https://wa.me/5521985430782?text=Ol%C3%A1!%20Quero%20abrir%20meu%20MEI%20em%20S%C3%A3o%20Gon%C3%A7alo!" class="promo-button">Quero abrir um MEI </a>
       </div>
     </div>
   </section>
 
+  <!-- IRPF DICAS -->
   <section id="irpf-dicas">
     <h2 class="section-title">Imposto de Renda 2026 - Dicas Atualizadas</h2>
     <div style="max-width:800px; margin:0 auto; padding:20px; text-align:justify;">
@@ -322,15 +308,16 @@
         <li><strong>Dicas:</strong> Não deixe para a última hora para evitar lentidão e erros no sistema.</li>
       </ul>
       <div style="text-align:center; margin:40px 0;">
-        <a href="https://wa.me/5521985430782?text=Ol%C3%A1!%20Quero%20ajuda%20com%20minha%20Declara%C3%A7%C3%A3o%20de%20Imposto%20de%20Renda%202026%20em%20S%C3%A3o%20Gon%C3%A7alo!" class="promo-button">Fazer minha Declaração Agora</a>
+        <a href="https://wa.me/5521985430782?text=Ol%C3%A1!%20Quero%20ajuda%20com%20minha%20Declara%C3%A7%C3%A3o%20de%20Imposto%20de%20Renda%202026%20em%20S%C3%A3o%20Gon%C3%A7alo!" class="promo-button">Agendar a minha declaração agora</a>
       </div>
     </div>
   </section>
 
+  <!-- SOBRE -->
   <section id="sobre">
     <h2 class="section-title">Sobre a VX Contabilidade em São Gonçalo</h2>
     <div class="about-section">
-      <img src="IMAGEM H.png" alt="Vitor de Oliveira Xavier - Contador CRC-RJ São Gonçalo - VX Contabilidade" loading="lazy">
+      <img src="IMAGEM H.png" alt="Vitor de Oliveira Xavier - Contador CRC-RJ São Gonçalo" loading="lazy">
       <div class="about-text" style="max-width:600px; padding:0 20px;">
         <p style="text-align:justify;"> Sou Vitor de Oliveira Xavier, contador inscrito no CRC-RJ sob nº 137627/O-4. Graduado em Ciências Contábeis pela Universidade Estácio de Sá e pós-graduado em Gestão de Departamento Pessoal pela Unifaveni. Sou especialista em <strong>contabilidade para MEI</strong> e <strong>Simples Nacional</strong>. Possuo certificados CFIS nos cursos de atualização sobre as rotinas de Analista Contábil, Analista de Departamento Pessoal, Analista Fiscal, Cálculos de Folha de Pagamento, Cruzamentos SPED Fiscal (EFD ICMS-IPI), DCTFWEB Na Prática, ECD 2024, ECF 2024, Faturamento e Emissão de Notas Fiscais, Fundamentos da Perícia Contábil, ICMS: Aspectos Constitucionais e Práticos, ICMS Substituição Tributária (ICMS ST) e Planejamento Estratégico Aplicado à Área Fiscal. Atendo toda a Região Metropolitana do Rio de Janeiro, com serviços personalizados e suporte contínuo. </p>
       </div>
@@ -347,21 +334,22 @@
     <h3 class="section-title">Depoimentos de Clientes</h3>
     <div class="carousel-container">
       <div class="carousel" id="carousel">
-        <img src="IMAGEM K.png" alt="Depoimento cliente contabilidade MEI São Gonçalo - VX" loading="lazy">
-        <img src="IMAGEM L.png" alt="Depoimento cliente Simples Nacional São Gonçalo - VX Contabilidade" loading="lazy">
+        <img src="IMAGEM K.png" alt="Depoimento cliente contabilidade MEI São Gonçalo" loading="lazy">
+        <img src="IMAGEM L.png" alt="Depoimento cliente Simples Nacional São Gonçalo" loading="lazy">
         <img src="IMAGEM M.png" alt="Depoimento cálculos trabalhistas VX Contabilidade" loading="lazy">
-        <img src="IMAGEM N.png" alt="Depoimento BPO financeiro São Gonçalo - VX" loading="lazy">
+        <img src="IMAGEM N.png" alt="Depoimento BPO financeiro São Gonçalo" loading="lazy">
         <img src="IMAGEM O.png" alt="Depoimento Imposto de Renda VX Contabilidade" loading="lazy">
-        <img src="IMAGEM P.png" alt="Depoimento regularização tributária RJ - VX Contabilidade" loading="lazy">
-        <img src="IMAGEM Q.png" alt="Depoimento cliente contabilidade São Gonçalo - VX" loading="lazy">
-        <img src="IMAGEM R.png" alt="Depoimento serviços contábeis VX Contabilidade" loading="lazy">
-        <img src="IMAGEM K.png" alt="Depoimento cliente contabilidade MEI São Gonçalo - VX" loading="lazy">
-        <img src="IMAGEM L.png" alt="Depoimento cliente Simples Nacional São Gonçalo - VX" loading="lazy">
+        <img src="IMAGEM P.png" alt="Depoimento regularização tributária RJ" loading="lazy">
+        <img src="IMAGEM Q.png" alt="Depoimento cliente contabilidade São Gonçalo" loading="lazy">
+        <img src="IMAGEM R.png" alt="Depoimento serviços contábeis VX" loading="lazy">
+        <img src="IMAGEM K.png" alt="Depoimento cliente contabilidade MEI São Gonçalo" loading="lazy">
+        <img src="IMAGEM L.png" alt="Depoimento cliente Simples Nacional São Gonçalo" loading="lazy">
       </div>
       <div class="dots" id="dots"></div>
     </div>
   </section>
 
+  <!-- CONTATO -->
   <section id="contato">
     <h2 class="section-title">Entre em Contato com a VX Contabilidade</h2>
     <div class="contact-form">
@@ -376,7 +364,6 @@
     </div>
     <div style="text-align:center; margin:30px 0;">
       <a href="https://www.instagram.com/vx_contabilidade?igsh=MTlodHh0OTliMWh1dg==" target="_blank"><img src="insta.png" alt="Instagram VX Contabilidade" loading="lazy" style="width:40px; margin:0 10px;"></a>
-      <a href="https://wa.me/5521985430782" target="_blank"><img src="whats.png" alt="WhatsApp VX Contabilidade" loading="lazy" style="width:40px; margin:0 10px;"></a>
     </div>
     <div class="email-contact">
       <p>E-mail: <a href="mailto:vxcontabilidade@gmail.com">vxcontabilidade@gmail.com</a></p>
@@ -394,7 +381,7 @@
 
 <div id="lightbox" class="lightbox" onclick="closeLightbox(event)" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.92); z-index:2000; justify-content:center; align-items:center; cursor:pointer;">
   <span class="close-btn" onclick="closeLightbox()" style="position:absolute; top:20px; right:25px; color:#fff; font-size:48px; cursor:pointer;">×</span>
-  <img id="lightbox-img" src="" alt="Imagem ampliada VX Contabilidade" style="max-width:94%; max-height:94vh; object-fit:contain; border-radius:8px;">
+  <img id="lightbox-img" src="" alt="Imagem ampliada" style="max-width:94%; max-height:94vh; object-fit:contain; border-radius:8px;">
 </div>
 
 <a href="https://wa.me/5521985430782?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20contabilidade%20em%20S%C3%A3o%20Gon%C3%A7alo" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
@@ -409,17 +396,21 @@ function toggleMenu() {
   document.querySelector('.mobile-menu').classList.toggle('active');
 }
 
-// Hero Carousel
+// Hero Carousel - 1 imagem por vez
 let heroIndex = 0;
 const heroCarousel = document.getElementById('hero-carousel');
 function updateHeroSlide() {
-  const isMobile = window.innerWidth <= 768;
-  const perView = isMobile ? 1 : 3;
-  heroCarousel.style.transform = `translateX(-${heroIndex * (100 / perView)}%)`;
+  heroCarousel.style.transform = `translateX(-${heroIndex * 100}%)`;
 }
-function nextHeroSlide() { heroIndex = (heroIndex + 1) % 19; updateHeroSlide(); }
-function prevHeroSlide() { heroIndex = (heroIndex - 1 + 19) % 19; updateHeroSlide(); }
-setInterval(nextHeroSlide, 4000);
+function nextHeroSlide() {
+  heroIndex = (heroIndex + 1) % heroCarousel.children.length;
+  updateHeroSlide();
+}
+function prevHeroSlide() {
+  heroIndex = (heroIndex - 1 + heroCarousel.children.length) % heroCarousel.children.length;
+  updateHeroSlide();
+}
+setInterval(nextHeroSlide, 5000); // 5 segundos
 window.addEventListener('resize', updateHeroSlide);
 
 // Depoimentos Carousel
