@@ -16,9 +16,7 @@
   <meta property="og:image" content="https://www.vxcontabilidade.com.br/vxlogo.png">
   <meta property="og:url" content="https://www.vxcontabilidade.com.br">
   <meta property="og:type" content="website">
-
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
     body { font-family:'Roboto',Arial,sans-serif; line-height:1.6; color:#333; background:#fff; min-height:100vh; display:flex; flex-direction:column; }
@@ -74,6 +72,30 @@
     .contact-form button:hover { background:#22635e; transform:translateY(-3px); }
     .map iframe { width:100%; max-width:700px; height:420px; border:0; border-radius:12px; box-shadow:0 8px 25px rgba(0,0,0,0.1); display:block; margin:0 auto; }
     .footer { text-align:center; padding:25px; background:#2c7873; color:#f7e8a0; width:100vw; margin-left:calc(-50vw + 50%); margin-right:calc(-50vw + 50%); }
+
+    /* Ajustes específicos para a seção Serviços (melhor legibilidade) */
+    .servicos-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .image-card h3 {
+      padding: 20px 24px 8px 24px;
+      margin: 0;
+      text-align: center;
+      color: #2c7873;
+      font-size: 21px;
+      font-weight: 700;
+    }
+    .image-card p {
+      padding: 0 24px 28px 24px;
+      margin: 0;
+      text-align: justify;
+      line-height: 1.7;
+      font-size: 16px;
+      color: #444;
+    }
+
     @media (max-width:768px) {
       .nav-menu { display:none; }
       .hamburger { display:flex; }
@@ -86,11 +108,12 @@
       .about-section { flex-direction:column; }
       .about-section img { max-width:100%; }
       .carousel img { max-height:320px; }
+      .image-card h3 { font-size: 19px; padding: 16px 20px 6px 20px; }
+      .image-card p { padding: 0 20px 24px 20px; font-size: 15px; }
     }
   </style>
 </head>
 <body>
-
 <header class="header">
   <div class="site-name">VX Contabilidade</div>
   <div class="logo"><img src="vxlogo.png" alt="VX Contabilidade - Contador em São Gonçalo RJ" loading="lazy"></div>
@@ -115,7 +138,6 @@
 </header>
 
 <main class="main-content">
-
   <section id="inicio">
     <div class="hero-image">
       <div class="hero-carousel-container">
@@ -159,49 +181,51 @@
     </div>
   </section>
 
-  <!-- Seção Serviços (mantida completa) -->
+  <!-- Seção Serviços - atualizada -->
   <section id="servicos" style="display:none;">
     <h2 class="section-title">Nossos Serviços de Contabilidade</h2>
-    <div class="image-grid">
-      <div class="image-card">
-        <img src="IMAGEM B.png" alt="Abertura de MEI grátis em São Gonçalo RJ" loading="lazy">
-        <h3>Abertura de MEI Grátis</h3>
-        <p>Formalize o seu negócio como MEI sem custos! Obtenha CNPJ, emita notas fiscais, acesse crédito empresarial e tenha direitos previdenciários com a nossa assessoria completa.</p>
-      </div>
-      <div class="image-card">
-        <img src="IMAGEM C.png" alt="Gestão de DAS e DASN-SIMEI para MEI em São Gonçalo" loading="lazy">
-        <h3>Gestão de DAS e DASN-SIMEI</h3>
-        <p>Gerenciamos o seu DAS mensalmente e entregamos a Declaração Anual dentro do prazo legal. Fornecemos planilhas de gestão da lucratividade e gestão do estoque para o acompanhamento e crescimento do seu negócio.</p>
-      </div>
-      <div class="image-card">
-        <img src="IMAGEM D.png" alt="Contabilidade Simples Nacional em São Gonçalo RJ" loading="lazy">
-        <h3>Simples Nacional</h3>
-        <p>Contabilidade completa para empresas do Simples Nacional com apuração de impostos, folha de pagamento e consultoria tributária. Foco na conformidade e crescimento do seu negócio.</p>
-      </div>
-      <div class="image-card">
-        <img src="IMAGEM E.png" alt="Declaração de Imposto de Renda em São Gonçalo" loading="lazy">
-        <h3>Imposto de Renda</h3>
-        <p>Declaração de Imposto de Renda para Pessoa Física e MEI com precisão e segurança. Evite a malha fina com a nossa análise detalhada e maximize as suas deduções legais.</p>
-      </div>
-      <div class="image-card">
-        <img src="IMAGEM F.png" alt="Certificado Digital e-CPF e-CNPJ em São Gonçalo" loading="lazy">
-        <h3>Certificado Digital</h3>
-        <p>Emissão e renovação de certificados e-CPF e e-CNPJ (A1 e A3) com agilidade e suporte completo. Atendimento presencial ou por videoconferência. </p>
-      </div>
-      <div class="image-card">
-        <img src="IMAGEM G.png" alt="Cálculos trabalhistas em São Gonçalo RJ" loading="lazy">
-        <h3>Cálculos Trabalhistas</h3>
-        <p>Realizamos cálculos de rescisões, horas extras, férias, 13º, FGTS e outras verbas trabalhistas. Elaboramos laudos claros e ágeis para processos judiciais e extrajudiciais. </p>
-      </div>
-      <div class="image-card">
-        <img src="IMAGEM I.png" alt="BPO Financeiro em São Gonçalo" loading="lazy">
-        <h3>BPO Financeiro</h3>
-        <p>O nosso BPO Financeiro ajuda empreendedores a organizarem suas finanças sem precisar contratar equipe interna. Inclui controle de contas a pagar e receber, emissão de boletos e notas fiscais. </p>
-      </div>
-      <div class="image-card">
-        <img src="IMAGEM J.png" alt="Regularização de débitos tributários em São Gonçalo" loading="lazy">
-        <h3>Regularização de Débitos</h3>
-        <p>Precisa regularizar débitos tributários? Nós cuidamos de todo o processo com segurança e agilidade. Evite multas, bloqueios e restrições no CPF ou CNPJ. </p>
+    <div class="servicos-container">
+      <div class="image-grid">
+        <div class="image-card">
+          <img src="IMAGEM B.png" alt="Abertura de MEI grátis em São Gonçalo RJ" loading="lazy">
+          <h3>Abertura de MEI Grátis</h3>
+          <p>Formalize o seu negócio como MEI sem custos! Obtenha CNPJ, emita notas fiscais, acesse crédito empresarial e tenha direitos previdenciários com a nossa assessoria completa.</p>
+        </div>
+        <div class="image-card">
+          <img src="IMAGEM C.png" alt="Gestão de DAS e DASN-SIMEI para MEI em São Gonçalo" loading="lazy">
+          <h3>Gestão de DAS e DASN-SIMEI</h3>
+          <p>Gerenciamos o seu DAS mensalmente e entregamos a Declaração Anual dentro do prazo legal. Fornecemos planilhas de gestão da lucratividade e gestão do estoque para o acompanhamento e crescimento do seu negócio.</p>
+        </div>
+        <div class="image-card">
+          <img src="IMAGEM D.png" alt="Contabilidade Simples Nacional em São Gonçalo RJ" loading="lazy">
+          <h3>Simples Nacional</h3>
+          <p>Contabilidade completa para empresas do Simples Nacional com apuração de impostos, folha de pagamento e consultoria tributária. Foco na conformidade e crescimento do seu negócio.</p>
+        </div>
+        <div class="image-card">
+          <img src="IMAGEM E.png" alt="Declaração de Imposto de Renda em São Gonçalo" loading="lazy">
+          <h3>Imposto de Renda</h3>
+          <p>Declaração de Imposto de Renda para Pessoa Física e MEI com precisão e segurança. Evite a malha fina com a nossa análise detalhada e maximize as suas deduções legais.</p>
+        </div>
+        <div class="image-card">
+          <img src="IMAGEM F.png" alt="Certificado Digital e-CPF e-CNPJ em São Gonçalo" loading="lazy">
+          <h3>Certificado Digital</h3>
+          <p>Emissão e renovação de certificados e-CPF e e-CNPJ (A1 e A3) com agilidade e suporte completo. Atendimento presencial ou por videoconferência. </p>
+        </div>
+        <div class="image-card">
+          <img src="IMAGEM G.png" alt="Cálculos trabalhistas em São Gonçalo RJ" loading="lazy">
+          <h3>Cálculos Trabalhistas</h3>
+          <p>Realizamos cálculos de rescisões, horas extras, férias, 13º, FGTS e outras verbas trabalhistas. Elaboramos laudos claros e ágeis para processos judiciais e extrajudiciais. </p>
+        </div>
+        <div class="image-card">
+          <img src="IMAGEM I.png" alt="BPO Financeiro em São Gonçalo" loading="lazy">
+          <h3>BPO Financeiro</h3>
+          <p>O nosso BPO Financeiro ajuda empreendedores a organizarem suas finanças sem precisar contratar equipe interna. Inclui controle de contas a pagar e receber, emissão de boletos e notas fiscais. </p>
+        </div>
+        <div class="image-card">
+          <img src="IMAGEM J.png" alt="Regularização de débitos tributários em São Gonçalo" loading="lazy">
+          <h3>Regularização de Débitos</h3>
+          <p>Precisa regularizar débitos tributários? Nós cuidamos de todo o processo com segurança e agilidade. Evite multas, bloqueios e restrições no CPF ou CNPJ. </p>
+        </div>
       </div>
     </div>
   </section>
@@ -218,7 +242,7 @@
     </div>
   </section>
 
-  <!-- IRPF 2026 - atualizado com dados corretos de 23/03/2026 -->
+  <!-- IRPF 2026 -->
   <section id="irpf2026" style="display:none; text-align:center;">
     <h2 class="section-title">Imposto de Renda Pessoa Física 2026</h2>
     <p style="font-size:18px; max-width:700px; margin:0 auto 30px;">
@@ -243,9 +267,8 @@
           <p>• Comprometimento: dedicação às necessidades dos clientes. </p>
           <p>• Inovação: atualização contínua e uso de novas tecnologias. </p>
           <p>• Foco no Cliente: soluções personalizadas para cada negócio. </p>
-          <p>• Confidencialidade: segurança e privacidade das informações. </p>    
+          <p>• Confidencialidade: segurança e privacidade das informações. </p>
 </div>
-
     <h3 class="section-title">Depoimentos de Clientes</h3>
     <div class="carousel-container">
       <div class="carousel" id="carousel">
@@ -304,7 +327,7 @@
     </div>
   </section>
 
-  <!-- IRPF Dicas - atualizado com dados corretos -->
+  <!-- IRPF Dicas -->
   <section id="irpf-dicas" style="display:none;">
     <h2 class="section-title">Imposto de Renda 2026 - Dicas Atualizadas</h2>
     <div style="max-width:800px; margin:0 auto; padding:20px; text-align:justify;">
@@ -344,14 +367,12 @@
 function toggleMenu() {
   document.querySelector('.mobile-menu').classList.toggle('active');
 }
-
 function showSection(id) {
   document.querySelectorAll('section[id]').forEach(s => s.style.display = 'none');
   const target = document.getElementById(id);
   if (target) target.style.display = 'block';
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-
 // Hero Carousel
 let heroIndex = 0;
 const heroCarousel = document.getElementById('hero-carousel');
@@ -364,7 +385,6 @@ function nextHeroSlide() { heroIndex = (heroIndex + 1) % 19; updateHeroSlide(); 
 function prevHeroSlide() { heroIndex = (heroIndex - 1 + 19) % 19; updateHeroSlide(); }
 setInterval(nextHeroSlide, 4000);
 window.addEventListener('resize', updateHeroSlide);
-
 // Depoimentos Carousel
 let depIndex = 0;
 const depCarousel = document.getElementById('carousel');
@@ -387,7 +407,6 @@ function nextDep() {
   document.querySelectorAll('.dot').forEach((d, idx) => d.classList.toggle('active', idx === depIndex));
 }
 setInterval(nextDep, 5000);
-
 // WhatsApp envio
 function sendToWhatsApp() {
   const name = document.getElementById('wa-name')?.value.trim() || 'Cliente';
@@ -401,7 +420,6 @@ function sendToWhatsApp() {
   if (document.getElementById('wa-phone')) document.getElementById('wa-phone').value = '';
   if (document.getElementById('wa-message')) document.getElementById('wa-message').value = '';
 }
-
 // Lightbox
 function openLightbox(src) {
   document.getElementById('lightbox-img').src = src;
@@ -414,7 +432,6 @@ function closeLightbox(e) {
     document.body.style.overflow = '';
   }
 }
-
 // Inicialização
 window.addEventListener('load', () => {
   const hash = location.hash.replace('#','');
