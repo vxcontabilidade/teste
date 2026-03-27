@@ -151,8 +151,8 @@
     .header { background: #14213D; padding:15px 20px; position:fixed; width:100%; top:0; z-index:1000; box-shadow:0 4px 12px rgba(0,0,0,0.15); display:flex; align-items:center; justify-content:space-between; }
     .site-name { color:#f7e8a0; font-size:26px; font-weight:700; }
     .logo img { height:52px; }
-    .hamburger { display:none; flex-direction:column; cursor:pointer; background:none; border:none; padding:4px; }
-    .hamburger span { width:30px; height:4px; background:#f7e8a0; margin:3px 0; border-radius:2px; display:block; }
+     .hamburger { display:none; flex-direction:column; cursor:pointer; }
+    .hamburger span { width:30px; height:4px; background:#f7e8a0; margin:3px 0; border-radius:2px; }
     .nav-menu { display:flex; gap:22px; }
     /* ✅ NOVO: active state no menu */
     .nav-menu a { color:#f7e8a0; text-decoration:none; font-size:17px; font-weight:500; transition:color 0.3s; padding-bottom:3px; border-bottom:2px solid transparent; }
@@ -329,7 +329,7 @@ opacity: 1;
 
 <header class="header">
   <div class="site-name">VX Contabilidade</div>
-  <div class="logo"><img src="vxlogo.webp" alt="VX Contabilidade - Contador em São Gonçalo RJ" width="90" height="52"></div>
+  <div class="logo"><img src="vxlogo.webp" alt="VX Contabilidade - Contador em São Gonçalo RJ" loading="lazy"></div>
   <!-- ✅ NOVO: aria-label no hamburger -->
   <button class="hamburger" onclick="toggleMenu()" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-nav">
     <span></span><span></span><span></span>
