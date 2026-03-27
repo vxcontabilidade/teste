@@ -151,8 +151,8 @@
     .header { background: #14213D; padding:15px 20px; position:fixed; width:100%; top:0; z-index:1000; box-shadow:0 4px 12px rgba(0,0,0,0.15); display:flex; align-items:center; justify-content:space-between; }
     .site-name { color:#f7e8a0; font-size:26px; font-weight:700; }
     .logo img { height:52px; }
-     .hamburger { display:none; flex-direction:column; cursor:pointer; }
-    .hamburger span { width:30px; height:4px; background:#f7e8a0; margin:3px 0; border-radius:2px; }
+    .hamburger { display:none; flex-direction:column; cursor:pointer; background:none; border:none; padding:4px; }
+    .hamburger span { width:30px; height:4px; background:#f7e8a0; margin:3px 0; border-radius:2px; display:block; }
     .nav-menu { display:flex; gap:22px; }
     /* ✅ NOVO: active state no menu */
     .nav-menu a { color:#f7e8a0; text-decoration:none; font-size:17px; font-weight:500; transition:color 0.3s; padding-bottom:3px; border-bottom:2px solid transparent; }
@@ -223,7 +223,7 @@ opacity: 1;
     .hero-carousel-container { position:relative; width:100%; max-width:1000px; margin:0 auto; overflow:hidden; }
     .hero-carousel { display:flex; transition:transform 0.6s ease-in-out; }
     .hero-carousel img { width:100%; height:auto; max-height:500px; object-fit:contain; flex-shrink:0; display:block; }
-    .carousel-btn { position:absolute; top:50%; transform:translateY(-50%); background:rgba(20,33,61,0.9); color: 14213D; border:none; width:60px; height:60px; font-size:36px; border-radius:50%; cursor:pointer; z-index:20; box-shadow:0 6px 18px rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center; transition:all 0.3s; }
+    .carousel-btn { position:absolute; top:50%; transform:translateY(-50%); background:rgba(20,33,61,0.9); color:#f7e8a0; border:none; width:60px; height:60px; font-size:36px; border-radius:50%; cursor:pointer; z-index:20; box-shadow:0 6px 18px rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center; transition:all 0.3s; }
     .carousel-btn:hover { background: #14213D; transform:translateY(-50%) scale(1.12); }
     .carousel-btn.left  { left:10px; }
     .carousel-btn.right { right:10px; }
@@ -329,7 +329,7 @@ opacity: 1;
 
 <header class="header">
   <div class="site-name">VX Contabilidade</div>
-  <div class="logo"><img src="vxlogo.webp" alt="VX Contabilidade - Contador em São Gonçalo RJ" loading="lazy"></div>
+  <div class="logo"><img src="vxlogo.webp" alt="VX Contabilidade - Contador em São Gonçalo RJ" width="90" height="52"></div>
   <!-- ✅ NOVO: aria-label no hamburger -->
   <button class="hamburger" onclick="toggleMenu()" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-nav">
     <span></span><span></span><span></span>
