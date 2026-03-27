@@ -536,7 +536,7 @@ opacity: 1;
   <section id="mei">
     <h2 class="section-title">Como Abrir MEI?</h2>
     <div style="max-width:800px; margin:0 auto; padding:20px; text-align:justify;">
-      <p style="font-size:18px; margin-bottom:30px;">Abertura gratuita e sem burocracia com a VX Contabilidade.</p>
+      <p style="font-size:18px; margin-bottom:30px;">Realizamos a abertura gratuita e sem burocracia.</p>
       <ul style="font-size:17px; line-height:1.8; list-style:disc; padding-left:30px;">
         <li><strong>Quem pode ser MEI?</strong> Faturamento até R$ 81.000/ano (2026) e atividades permitidas pela legislação.</li>
         <li><strong>Vantagens:</strong> Abra seu CNPJ, emita notas fiscais, pague INSS reduzido (a partir de ~R$ 70/mês) e conquiste acesso facilitado a crédito e oportunidades financeiras.</li>
@@ -562,11 +562,9 @@ opacity: 1;
             <li>Rendimentos isentos/não tributáveis ou tributados na fonte acima de R$ 200.000,00.</li>
             <li>Bens ou direitos acima de R$ 800.000,00 em 31/12/2025.</li>
             <li>Outros: ganho de capital sujeito a imposto, operações em bolsa acima de R$ 40 mil, receita rural acima de R$ 177.920,00, etc.</li>
-          </ul>
-        </li>
-        <li><strong>Prazo oficial:</strong> 23/03/2026 (8h) a 29/05/2026 (23h59).</li>
-        <li><strong>Restituição:</strong> Em lotes a partir de 29/05/2026 (prioridade para idosos, professores, etc.).</li>
-        <li><strong>Dicas:</strong> Não deixe para a última hora para evitar lentidão e erros no sistema.</li>
+            <li><strong>Prazo oficial:</strong> 23/03/2026 (8h) a 29/05/2026 (23h59).</li>
+            <li><strong>Restituição:</strong> Em lotes a partir de 29/05/2026 (prioridade para idosos, professores, etc.).</li>
+            <li><strong>Dicas:</strong> Não deixe para a última hora para evitar lentidão e erros no sistema.</li>
       </ul>
       <div style="text-align:center; margin:40px 0;">
         <a href="https://wa.me/5521985430782?text=Ol%C3%A1!%20Quero%20ajuda%20com%20a%20minha%20Declara%C3%A7%C3%A3o%20do%20Imposto%20de%20Renda%202026!" class="promo-button">Agendar a minha declaração agora</a>
@@ -597,27 +595,31 @@ opacity: 1;
     </div>
 
 <!-- ✅ NOVO: Seção de números -->
-  <div class="stats-section" aria-label="Números da VX Contabilidade">
-    <div class="stats-grid">
-      <div class="stat-item">
-        <div class="stat-number">100+</div>
-        <div class="stat-label">Clientes atendidos</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">3+</div>
-        <div class="stat-label">Anos de experiência</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">8</div>
-        <div class="stat-label">Serviços especializados</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">48h</div>
-        <div class="stat-label">Para abrir seu MEI</div>
-      </div>
+<div class="stats-section" aria-label="Números da VX Contabilidade">
+  <div class="stats-grid">
+    
+    <div class="stat-item">
+      <div class="stat-number" data-target="100">0</div>
+      <div class="stat-label">Clientes atendidos</div>
     </div>
-  </div>
 
+    <div class="stat-item">
+      <div class="stat-number" data-target="3">0</div>
+      <div class="stat-label">Anos de experiência</div>
+    </div>
+
+    <div class="stat-item">
+      <div class="stat-number" data-target="8">0</div>
+      <div class="stat-label">Serviços especializados</div>
+    </div>
+
+    <div class="stat-item">
+      <div class="stat-number" data-target="48" data-suffix="h">0</div>
+      <div class="stat-label">Para abrir seu MEI</div>
+    </div>
+
+  </div>
+</div>
     <h3 class="section-title">Clientes Satisfeitos</h3>
     <div class="carousel-container">
       <div class="carousel" id="carousel" role="region" aria-label="Depoimentos de clientes">
@@ -944,6 +946,58 @@ document.querySelectorAll('.faq-question').forEach(btn => {
   });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+
+  const counters = document.querySelectorAll('.stat-number');
+
+  const animateCounter = (el) => {
+    const target = +el.dataset.target;
+    const suffix = el.dataset.suffix || (target !== 48 ? '+' : '');
+
+    const duration = 1000;
+    const startTime = performance.now();
+
+    const update = (currentTime) => {
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      const value = Math.floor(progress * target);
+
+      el.textContent = value + suffix;
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        el.textContent = target + suffix;
+      }
+    };
+
+    requestAnimationFrame(update);
+  };
+
+  // IntersectionObserver (anima ao aparecer)
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { 
+    threshold: 0.2,
+    rootMargin: "0px 0px -50px 0px"
+  });
+
+  counters.forEach(counter => observer.observe(counter));
+
+  // 🔥 fallback (caso não dispare em ambiente local)
+  setTimeout(() => {
+    counters.forEach(counter => {
+      if (counter.textContent === "0") {
+        animateCounter(counter);
+      }
+    });
+  }, 800);
+
+});
 </script>
 
 </body>
