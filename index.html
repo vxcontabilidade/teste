@@ -176,58 +176,108 @@ bottom: 25px;
 right: 25px;
 width: 65px;
 height: 65px;
-background: #14213D;
+background: #25D366;
 border-radius: 50%;
-box-shadow: 0 6px 20px rgba(0,0,0,0.35);
-z-index: 9999;
 display: flex;
 align-items: center;
 justify-content: center;
+text-decoration: none;
+z-index: 9999;
+color: #fff;
+
+/* SOMBRA PREMIUM */
+box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+
+/* ANIMAÇÃO SUAVE */
 transition: all 0.3s ease;
-color: #ffffff; /* controla a cor do ícone */
 }
 
-/* Ícone sempre branco */
+/* ÍCONE */
 .whatsapp-float svg {
-width: 55px;
-height: 55px;
+width: 34px;
+height: 34px;
 fill: currentColor;
 }
 
+/* HOVER */
 .whatsapp-float:hover {
 transform: scale(1.1);
-box-shadow: 0 10px 25px rgba(20,33,61,0.6);
+background: #1ebe5d;
+box-shadow: 0 12px 30px rgba(37, 211, 102, 0.7);
 }
 
-/* Tooltip estilo profissional */
+/* 🔥 ANIMAÇÃO PULSANTE (CONVERSÃO) */
+.whatsapp-float::after {
+content: "";
+position: absolute;
+width: 65px;
+height: 65px;
+border-radius: 50%;
+background: rgba(37, 211, 102, 0.4);
+animation: pulse 2s infinite;
+z-index: -1;
+}
+
+@keyframes pulse {
+0% {
+transform: scale(1);
+opacity: 0.7;
+}
+70% {
+transform: scale(1.6);
+opacity: 0;
+}
+100% {
+opacity: 0;
+}
+}
+
+/* TOOLTIP */
 .whatsapp-float::before {
 content: 'Fale conosco';
 position: absolute;
-right: 75px;
-background: #222;
+right: 80px;
+background: #1f2937;
 color: #fff;
 font-size: 13px;
-padding: 6px 12px;
+padding: 7px 12px;
 border-radius: 6px;
 white-space: nowrap;
 opacity: 0;
 pointer-events: none;
-transition: opacity 0.25s;
-font-family: 'Roboto', sans-serif;
+transition: all 0.3s ease;
+font-family: Arial, sans-serif;
 }
 
 .whatsapp-float:hover::before {
 opacity: 1;
+transform: translateX(-5px);
 }
-    /* ===== HERO CAROUSEL ===== */
+
+/* RESPONSIVO */
+@media (max-width: 480px) {
+.whatsapp-float {
+width: 55px;
+height: 55px;
+bottom: 20px;
+right: 20px;
+}
+
+.whatsapp-float svg {
+width: 28px;
+height: 28px;
+}
+
+.whatsapp-float::after {
+width: 55px;
+height: 55px;
+}
+}
+   /* ===== HERO CAROUSEL ===== */
     .hero-image { width:100%; padding:20px 0; background: #f8f9fa; }
     .hero-carousel-container { position:relative; width:100%; max-width:1000px; margin:0 auto; overflow:hidden; }
     .hero-carousel { display:flex; transition:transform 0.6s ease-in-out; }
     .hero-carousel img { width:100%; height:auto; max-height:500px; object-fit:contain; flex-shrink:0; display:block; }
-    .carousel-btn { position:absolute; top:50%; transform:translateY(-50%); background:transparent; color:#f7e8a0; border: 14213D; width:60px; height:60px; font-size:36px; border-radius:50%; cursor:pointer; z-index:20; box-shadow:0 6px 18px rgba(0,0,0,0.4); display:flex; align-items:center; justify-content:center; transition:all 0.3s; }
-    .carousel-btn:hover { background: #14213D; transform:translateY(-50%) scale(1.12); }
-    .carousel-btn.left  { left:10px; }
-    .carousel-btn.right { right:10px; }
 
     /* ===== TIPOGRAFIA ===== */
     .title { text-align:center; font-size:38px; font-weight:700; margin:40px 0 10px; }
@@ -376,10 +426,8 @@ opacity: 1;
           <img src="IMAGEM AE.webp" alt="Contabilidade Simples Nacional São Gonçalo" loading="lazy" width="1000" height="500">
         </div>
         <!-- ✅ NOVO: aria-label nos botões do carousel -->
-        <button class="carousel-btn left" onclick="prevHeroSlide()" aria-label="Imagem anterior">❮</button>
-        <button class="carousel-btn right" onclick="nextHeroSlide()" aria-label="Próxima imagem">❯</button>
-      </div>
-    </div>
+
+
     <h1 class="title">Contabilidade para MEI e Simples Nacional em São Gonçalo</h1>
     <!-- ✅ CORRIGIDO: era h2 antes do h1 — agora é p para não quebrar hierarquia -->
     <p class="subtitle">Serviços contábeis eficientes para o crescimento da sua empresa no RJ</p>
@@ -702,7 +750,7 @@ Com a extinção da DIRF, as informações que alimentam a declaração pré-pre
           <span class="faq-arrow" aria-hidden="true">▾</span>
         </button>
         <div class="faq-answer" id="faq6" role="region">
-          Sim! Atendemos toda a Região Metropolitana do Rio de Janeiro, incluindo Niterói e municípios vizinhos.
+          Atendemos toda a Região Metropolitana do Rio de Janeiro, incluindo Niterói e municípios vizinhos.
         </div>
       </div>
 
@@ -786,13 +834,13 @@ Sim. Mesmo atuando como pessoa física, o(a) profissional autônomo(a) possui ob
 </div>
 
 <!-- ✅ NOVO: WhatsApp com ícone SVG local (sem dependência externa) -->
+
 <a href="https://wa.me/5521985430782?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20contabilidade"
    class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco pelo WhatsApp">
-  <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <circle cx="24" cy="24" r="24" fill="#25d366"/>
-    <path d="M34.5 13.5A14.4 14.4 0 0 0 24 9C16.27 9 10 15.27 10 23a14 14 0 0 0 1.93 7.12L10 39l9.13-1.9A14.07 14.07 0 0 0 24 38.4C31.73 38.4 38 32.13 38 24.4a13.96 13.96 0 0 0-3.5-10.9z" fill="#fff"/>
-    <path d="M29.9 27.2c-.33-.17-1.94-.96-2.24-1.07-.3-.1-.52-.17-.74.17-.22.34-.85 1.07-1.04 1.29-.19.22-.38.25-.71.08a8.95 8.95 0 0 1-2.63-1.62 9.85 9.85 0 0 1-1.82-2.26c-.19-.33-.02-.5.14-.67.15-.15.33-.38.5-.57.17-.19.22-.33.33-.55.11-.22.06-.41-.03-.58-.08-.17-.74-1.78-1.01-2.44-.27-.64-.54-.55-.74-.56l-.63-.01c-.22 0-.58.08-.88.41-.3.33-1.15 1.13-1.15 2.75s1.18 3.19 1.34 3.41c.17.22 2.32 3.54 5.62 4.97.79.34 1.4.54 1.88.69.79.25 1.51.22 2.08.13.63-.1 1.94-.79 2.21-1.56.27-.76.27-1.42.19-1.56-.08-.14-.3-.22-.63-.38z" fill="#25d366"/>
-  </svg>
+<svg viewBox="0 0 24 24">
+<path d="M20.52 3.48A11.94 11.94 0 0 0 12.05 0C5.5 0 .17 5.33.17 11.88c0 2.1.55 4.14 1.6 5.94L0 24l6.36-1.67a11.9 11.9 0 0 0 5.69 1.45h.01c6.55 0 11.88-5.33 11.88-11.88 0-3.17-1.23-6.15-3.42-8.42zM12.06 21.3c-1.8 0-3.56-.48-5.1-1.38l-.36-.21-3.78.99 1.01-3.68-.23-.38a9.37 9.37 0 0 1-1.45-4.96c0-5.18 4.21-9.39 9.4-9.39 2.51 0 4.86.98 6.63 2.75a9.33 9.33 0 0 1 2.76 6.63c0 5.18-4.21 9.39-9.39 9.39zm5.2-7.03c-.28-.14-1.64-.81-1.9-.9-.26-.1-.45-.14-.64.14-.19.28-.73.9-.9 1.08-.17.19-.33.21-.62.07-.28-.14-1.2-.44-2.29-1.4-.84-.75-1.4-1.68-1.57-1.96-.16-.28-.02-.43.12-.58.13-.13.28-.33.43-.5.14-.17.19-.28.28-.47.1-.19.05-.35-.02-.49-.07-.14-.64-1.55-.87-2.12-.23-.55-.47-.47-.64-.48h-.55c-.19 0-.5.07-.77.35-.26.28-1 1-1 2.44s1.02 2.83 1.16 3.02c.14.19 2.01 3.06 4.87 4.3.68.29 1.21.47 1.62.6.68.22 1.3.19 1.79.12.55-.08 1.64-.67 1.87-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.19-.53-.33z"/>
+
+ </svg>
 </a>
 
 <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
@@ -844,7 +892,7 @@ window.addEventListener('resize', updateHeroSlide);
 let depIndex = 0;
 const depCarousel = document.getElementById('carousel');
 const dotsContainer = document.getElementById('dots');
-const totalDep = 5;
+const totalDep = 8;
 for (let i = 0; i < totalDep; i++) {
   const dot = document.createElement('span');
   dot.classList.add('dot');
@@ -1002,3 +1050,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
