@@ -377,6 +377,75 @@ display: none;
       .carousel-btn.right { right:5px; }
       .stat-number { font-size:36px; }
     }
+/* =========================
+   DESKTOP PROFISSIONAL
+   ========================= */
+@media (min-width: 1200px) {
+
+  /* ===== 1. LIBERA LARGURA GLOBAL ===== */
+  main.main-content {
+    max-width: 100%;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  /* ===== 2. HERO MAIS IMPACTANTE ===== */
+  .hero-carousel-container {
+    max-width: 1400px;
+  }
+
+  .hero-carousel img {
+    max-height: 600px;
+  }
+
+  /* ===== 3. GRID DE SERVIÇOS PROFISSIONAL ===== */
+  .image-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* ===== 4. CARDS MAIS PREMIUM ===== */
+  .image-card {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+  }
+
+  .image-card:hover {
+    transform: translateY(-10px);
+  }
+
+  /* ===== 5. IMAGENS PADRONIZADAS ===== */
+  .image-card img {
+    height: 220px;
+    object-fit: cover;
+  }
+
+  /* ===== 6. TIPOGRAFIA MAIS PROFISSIONAL ===== */
+  .image-card h3 {
+    text-align: left;
+    padding: 18px 22px 8px;
+    font-size: 20px;
+  }
+
+  .image-card p {
+    text-align: left;
+    padding: 0 22px 24px;
+    font-size: 15px;
+    line-height: 1.6;
+    flex-grow: 1;
+  }
+
+  /* ===== 7. SEÇÕES MAIS RESPIRADAS ===== */
+  .section-title {
+    font-size: 34px;
+    margin: 70px 0 40px;
+  }
+
+}
   </style>
 </head>
 <body>
