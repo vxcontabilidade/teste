@@ -645,7 +645,12 @@
     /* ===== TESTIMONIALS CAROUSEL ===== */
     .carousel-container { max-width: 750px; margin: 50px auto; overflow: visible; position: relative; }
     .carousel { display: flex; transition: transform 0.7s cubic-bezier(0.4,0,0.2,1); }
-    .carousel img { width: 100%; max-height: 420px; object-fit: contain; flex-shrink: 0; background: #f0f2f5; }
+.track {
+  display: flex;
+  gap: 20px;
+  animation: scroll 30s linear infinite;
+}
+   .carousel img { width: 100%; max-height: 420px; object-fit: contain; flex-shrink: 0; background: #f0f2f5; }
 
     /* ===== MVV (Missão, Visão, Valores) ===== */
     .mvv-section {
@@ -1177,7 +1182,7 @@
     </div>
 
     <!-- DEPOIMENTOS com moldura de tela -->
-    <h3 class="section-title">Clientes Satisfeitos</h3>
+    <h3 class="section-title">Mais de 100 clientes atendidos com excelência ⭐⭐⭐⭐⭐</h3>
     <div class="carousel-container">
       <div class="screen-frame fade-in">
         <div class="screen-frame-bar">
