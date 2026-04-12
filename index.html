@@ -1377,6 +1377,59 @@
     }
     .plan-btn--gold:hover { background: var(--gold-soft); }
 
+    .plan-price-wrap {
+      padding: 20px 24px 0;
+      text-align: center;
+    }
+    .plan-price {
+      font-family: var(--font-display);
+      font-size: 42px;
+      color: var(--navy);
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+    .plan-price sup { font-size: 20px; vertical-align: super; font-family: var(--font-body); font-weight: 700; }
+    .plan-price span { font-size: 16px; font-weight: 400; color: var(--gray-500); font-family: var(--font-body); }
+    .plan-price--light { color: var(--white); }
+    .plan-price--light span { color: rgba(255,255,255,0.65); }
+    .plan-desc {
+      font-size: 13px;
+      color: var(--gray-500);
+      text-align: center;
+      padding: 10px 24px 0;
+      line-height: 1.5;
+    }
+    .plan-desc--light { color: rgba(255,255,255,0.75); }
+    .plan-divider {
+      margin: 16px 24px 4px;
+      border: none;
+      border-top: 1px dashed var(--gray-200);
+      font-size: 12px;
+      color: var(--gray-500);
+      text-align: center;
+    }
+    .plan-extra {
+      margin: 0 24px 4px;
+      background: rgba(240,200,74,0.12);
+      border: 1px solid rgba(240,200,74,0.35);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 12.5px;
+      color: var(--navy);
+      font-weight: 600;
+      text-align: center;
+    }
+    .plan-ideal {
+      background: var(--navy);
+      color: rgba(255,255,255,0.82);
+      font-size: 12px;
+      text-align: center;
+      padding: 10px 16px;
+      line-height: 1.5;
+      margin-top: auto;
+    }
+    .plan-ideal--gold { background: rgba(240,200,74,0.1); color: var(--navy); border-top: 1px solid rgba(240,200,74,0.25); }
+
     /* ===== IRPF DESIGN CARD ===== */
     .irpf-design-card {
       background: var(--navy-light);
@@ -1622,6 +1675,7 @@
   <nav class="nav-menu" aria-label="Navegação principal">
     <a href="#inicio">Início</a>
     <a href="#servicos">Serviços</a>
+    <a href="#promocoes">Promoções</a>
     <a href="#irpf2026">IR 2026</a>
     <a href="#mei">MEI</a>
     <a href="#sobre">Sobre</a>
@@ -1634,6 +1688,7 @@
     <button class="close-menu" onclick="toggleMenu()" aria-label="Fechar menu">×</button>
     <a href="#inicio" onclick="toggleMenu()">Início</a>
     <a href="#servicos" onclick="toggleMenu()">Serviços</a>
+    <a href="#promocoes" onclick="toggleMenu()">Promoções</a>
     <a href="#irpf2026" onclick="toggleMenu()">IR 2026</a>
     <a href="#mei" onclick="toggleMenu()">MEI</a>
     <a href="#sobre" onclick="toggleMenu()">Sobre</a>
@@ -1868,40 +1923,51 @@
             </div>
             <div class="plan-tag">MEI</div>
             <h3 class="plan-name">Plano Essencial</h3>
-            <p class="plan-faturamento">Faturamento até R$&nbsp;5.000/mês</p>
+            <p class="plan-faturamento">Ideal para quem emite poucas notas fiscais</p>
           </div>
-          <div class="plan-body">
+          <div class="plan-price-wrap">
+            <div class="plan-price"><sup>R$</sup>59<span>,00/mês</span></div>
+          </div>
+          <div class="plan-body" style="padding-top:16px;">
             <ul class="plan-features">
-              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Gestão mensal do DAS</li>
-              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Declaração Anual (DASN-SIMEI)</li>
-              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Planilha de lucratividade</li>
-              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Suporte via WhatsApp</li>
-              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Orientação fiscal contínua</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Guia DAS mensal</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Até 2 notas fiscais por mês</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Aviso de vencimento de impostos</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Controle do limite anual R$&nbsp;81.000,00</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Relatório simples de faturamento</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Suporte básico via WhatsApp</li>
             </ul>
-            <a href="https://wa.me/5521985430782?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20MEI%20Essencial." class="plan-btn" target="_blank" rel="noopener">Quero este plano</a>
+            <div class="plan-extra">📄 Nota extra: R$&nbsp;10,00 por nota</div>
+            <a href="https://wa.me/5521985430782?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20MEI%20Essencial." class="plan-btn" style="margin-top:14px;" target="_blank" rel="noopener">Quero este plano</a>
           </div>
         </div>
 
         <!-- PLANO MEI PROTEGIDO -->
         <div class="plan-card plan-card--featured fade-in">
-          <div class="plan-popular-badge">Mais Popular</div>
+          <div class="plan-popular-badge">Mais Vendido</div>
           <div class="plan-header plan-header--gold">
             <div class="plan-icon-wrap">
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 3l2.8 5.6 6.2.9-4.5 4.4 1.06 6.2L16 17.1l-5.56 2.9 1.06-6.2L7 9.5l6.2-.9L16 3z" stroke="#0a1628" stroke-width="1.8" stroke-linejoin="round"/><circle cx="16" cy="25" r="3" stroke="#0a1628" stroke-width="1.6"/><line x1="16" y1="22" x2="16" y2="19.8" stroke="#0a1628" stroke-width="1.6"/></svg>
             </div>
             <div class="plan-tag plan-tag--dark">MEI</div>
             <h3 class="plan-name plan-name--dark">Plano Protegido</h3>
-            <p class="plan-faturamento plan-faturamento--dark">Faturamento R$&nbsp;5.001–6.000/mês</p>
+            <p class="plan-faturamento plan-faturamento--dark">Para MEIs que precisam de mais suporte</p>
           </div>
-          <div class="plan-body">
+          <div class="plan-price-wrap">
+            <div class="plan-price"><sup>R$</sup>89<span>,00/mês</span></div>
+          </div>
+          <div class="plan-desc">Para MEIs que querem mais tranquilidade e suporte no dia a dia.</div>
+          <div class="plan-body" style="padding-top:12px;">
             <ul class="plan-features">
-              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Tudo do Plano Essencial</li>
-              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Controle de notas fiscais</li>
-              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Planilha de estoque</li>
-              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Análise de crescimento</li>
-              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Atendimento prioritário</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Inclui tudo do Plano Essencial</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Emissão de até 6 notas fiscais/mês</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Consulta de pendências no CNPJ</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Auxílio em parcelamentos simples</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>DASN-SIMEI (Declaração anual)</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Suporte prioritário via WhatsApp</li>
             </ul>
-            <a href="https://wa.me/5521985430782?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20MEI%20Protegido." class="plan-btn plan-btn--dark" target="_blank" rel="noopener">Quero este plano</a>
+            <div class="plan-extra">📄 Nota adicional: R$&nbsp;8,00 por nota</div>
+            <a href="https://wa.me/5521985430782?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20MEI%20Protegido." class="plan-btn plan-btn--dark" style="margin-top:14px;" target="_blank" rel="noopener">Quero este plano</a>
           </div>
         </div>
 
@@ -1913,17 +1979,22 @@
             </div>
             <div class="plan-tag">MEI</div>
             <h3 class="plan-name">Plano Crescimento</h3>
-            <p class="plan-faturamento">Faturamento acima de R$&nbsp;6.000/mês</p>
+            <p class="plan-faturamento">Para MEIs com maior volume de faturamento</p>
           </div>
-          <div class="plan-body">
+          <div class="plan-price-wrap">
+            <div class="plan-price"><sup>R$</sup>119<span>,00/mês</span></div>
+          </div>
+          <div class="plan-desc">Para MEIs que possuem maior volume de faturamento.</div>
+          <div class="plan-body" style="padding-top:12px;">
             <ul class="plan-features">
-              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Tudo do Plano Protegido</li>
-              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Consultoria tributária</li>
-              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Avaliação de desenquadramento</li>
-              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Planejamento de upgrade</li>
-              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Relatório mensal de desempenho</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Inclui tudo do Plano Protegido</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Emissão de até 15 notas fiscais/mês</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Consultoria básica de IRPF</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Orientação detalhada para migração ME</li>
+              <li><svg viewBox="0 0 16 16" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5l-7 7L3 8"/></svg>Faturamento mensal superior a R$&nbsp;6.000</li>
             </ul>
-            <a href="https://wa.me/5521985430782?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20MEI%20Crescimento." class="plan-btn" target="_blank" rel="noopener">Quero este plano</a>
+            <div class="plan-extra">📄 Nota adicional: R$&nbsp;6,00 por nota</div>
+            <a href="https://wa.me/5521985430782?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Plano%20MEI%20Crescimento." class="plan-btn" style="margin-top:14px;" target="_blank" rel="noopener">Quero este plano</a>
           </div>
         </div>
 
