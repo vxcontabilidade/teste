@@ -136,8 +136,9 @@
       --off-white:  #f5f7fb;
       --gray-100:   #f1f4f9;
       --gray-200:   #e2e8f4;
-      --gray-500:   #64748b;
-      --gray-700:   #334155;
+      /* Legibility fix: darker grays for body copy */
+      --gray-500:   #475569;   /* was #64748b — now WCAG AA on white */
+      --gray-700:   #1e293b;   /* was #334155 — stronger for secondary text */
       --text:       #0f172a;
       --radius-sm:  10px;
       --radius-md:  18px;
@@ -355,7 +356,7 @@
     }
     .hero-sub {
       font-size: clamp(17px, 2vw, 21px);
-      color: rgba(255,255,255,0.65);
+      color: rgba(255,255,255,0.82);
       font-weight: 300;
       line-height: 1.6;
       max-width: 640px;
@@ -437,7 +438,7 @@
     }
     .hero-stat-label {
       font-size: 13px;
-      color: rgba(255,255,255,0.5);
+      color: rgba(255,255,255,0.72);
       margin-top: 6px;
       font-weight: 400;
     }
@@ -470,7 +471,7 @@
     .section-sub {
       font-size: 18px;
       color: var(--gray-500);
-      font-weight: 300;
+      font-weight: 400;
       line-height: 1.7;
       max-width: 580px;
     }
@@ -612,7 +613,7 @@
     }
     .irpf-content .section-tag { color: var(--gold); }
     .irpf-content .section-title { color: var(--white); }
-    .irpf-content .section-sub { color: rgba(255,255,255,0.6); }
+    .irpf-content .section-sub { color: rgba(255,255,255,0.82); font-weight: 400; }
     .irpf-deadline {
       display: inline-flex;
       align-items: center;
@@ -653,8 +654,8 @@
     }
     .mei-illustration p {
       font-size: 15px;
-      color: rgba(255,255,255,0.6);
-      font-weight: 300;
+      color: rgba(255,255,255,0.82);
+      font-weight: 400;
       line-height: 1.7;
       margin-bottom: 28px;
     }
@@ -712,7 +713,7 @@
       margin-bottom: 16px;
     }
     .tip-card h3 { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
-    .tip-card p { font-size: 14px; color: var(--gray-500); line-height: 1.7; font-weight: 300; }
+    .tip-card p { font-size: 15px; color: var(--gray-700); line-height: 1.7; font-weight: 400; }
 
     /* ===== ABOUT ===== */
     .about-section { background: var(--white); }
@@ -729,7 +730,7 @@
       color: var(--gray-700);
       line-height: 1.9;
       margin-bottom: 20px;
-      font-weight: 300;
+      font-weight: 400;
     }
     .about-certs {
       display: flex;
@@ -781,7 +782,7 @@
       color: var(--navy);
       margin-bottom: 14px;
     }
-    .mvv-card p { font-size: 14px; color: var(--gray-500); line-height: 1.8; font-weight: 300; }
+    .mvv-card p { font-size: 15px; color: var(--gray-700); line-height: 1.8; font-weight: 400; }
     .valores-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
     .valor-chip {
       background: var(--navy);
@@ -818,8 +819,8 @@
       line-height: 1;
     }
     .stat-label {
-      font-size: 13px;
-      color: rgba(255,255,255,0.5);
+      font-size: 14px;
+      color: rgba(255,255,255,0.72);
       margin-top: 10px;
       font-weight: 400;
     }
@@ -920,9 +921,9 @@
       overflow: hidden;
       transition: max-height 0.35s var(--ease), padding 0.3s;
       font-size: 15px;
-      color: var(--gray-500);
+      color: var(--gray-700);
       line-height: 1.8;
-      font-weight: 300;
+      font-weight: 400;
       padding: 0 4px;
     }
     .faq-answer.open { max-height: 400px; padding: 0 4px 22px; }
@@ -941,13 +942,13 @@
     }
     .contact-info .section-tag { color: var(--gold); }
     .contact-info .section-title { color: var(--white); }
-    .contact-info .section-sub { color: rgba(255,255,255,0.55); }
+    .contact-info .section-sub { color: rgba(255,255,255,0.82); font-weight: 400; }
     .contact-details { margin-top: 40px; display: flex; flex-direction: column; gap: 16px; }
     .contact-detail {
       display: flex;
       align-items: center;
       gap: 14px;
-      color: rgba(255,255,255,0.75);
+      color: rgba(255,255,255,0.88);
       font-size: 15px;
     }
     .contact-detail svg { width: 18px; height: 18px; stroke: var(--gold); flex-shrink: 0; }
@@ -1272,11 +1273,11 @@
     .plan-name--dark { color: var(--navy); }
     .plan-faturamento {
       font-size: 13px;
-      color: rgba(255,255,255,0.65);
-      font-weight: 300;
+      color: rgba(255,255,255,0.85);
+      font-weight: 400;
       line-height: 1.5;
     }
-    .plan-faturamento--dark { color: rgba(10,22,40,0.65); }
+    .plan-faturamento--dark { color: rgba(10,22,40,0.75); }
     .plan-body {
       padding: 24px;
       flex: 1;
@@ -1302,7 +1303,7 @@
     }
     .plan-features li:last-child { border-bottom: none; }
     .plan-features li svg { width: 16px; height: 16px; flex-shrink: 0; margin-top: 1px; }
-    .plan-features--light li { color: rgba(255,255,255,0.75); border-bottom-color: rgba(255,255,255,0.07); }
+    .plan-features--light li { color: rgba(255,255,255,0.9); border-bottom-color: rgba(255,255,255,0.1); }
     .plan-btn {
       display: block;
       text-align: center;
@@ -1357,7 +1358,7 @@
     }
     .irpf-card-year {
       font-size: 12px;
-      color: rgba(255,255,255,0.4);
+      color: rgba(255,255,255,0.65);
       font-weight: 500;
       letter-spacing: 0.5px;
     }
@@ -1378,7 +1379,7 @@
     }
     .irpf-banner-sub {
       font-size: 13px;
-      color: rgba(255,255,255,0.5);
+      color: rgba(255,255,255,0.72);
       margin-top: 4px;
     }
     .irpf-card-rows {
@@ -2205,17 +2206,7 @@
       O JS detecta o viewport e calcula quantos itens por slide.
     -->
     <div class="dep-carousel-wrap fade-in" id="dep-carousel-wrap">
-      <div class="dep-track" id="dep-track">
-        <!-- As 8 imagens de depoimento reais -->
-        <div class="dep-item"><img src="IMAGEM K.webp" alt="Depoimento cliente 1 — VX Contabilidade" loading="lazy"></div>
-        <div class="dep-item"><img src="IMAGEM L.webp" alt="Depoimento cliente 2 — VX Contabilidade" loading="lazy"></div>
-        <div class="dep-item"><img src="IMAGEM M.webp" alt="Depoimento cliente 3 — VX Contabilidade" loading="lazy"></div>
-        <div class="dep-item"><img src="IMAGEM N.webp" alt="Depoimento cliente 4 — VX Contabilidade" loading="lazy"></div>
-        <div class="dep-item"><img src="IMAGEM O.webp" alt="Depoimento cliente 5 — VX Contabilidade" loading="lazy"></div>
-        <div class="dep-item"><img src="IMAGEM P.webp" alt="Depoimento cliente 6 — VX Contabilidade" loading="lazy"></div>
-        <div class="dep-item"><img src="IMAGEM Q.webp" alt="Depoimento cliente 7 — VX Contabilidade" loading="lazy"></div>
-        <div class="dep-item"><img src="IMAGEM R.webp" alt="Depoimento cliente 8 — VX Contabilidade" loading="lazy"></div>
-      </div>
+      <!-- carousel built by JS below -->
     </div>
 
     <div class="testimonials-nav">
@@ -2655,4 +2646,9 @@ document.querySelectorAll('.stat-number, .hero-stat-num').forEach(c => counterOb
 
 // ===== FADE IN =====
 const fadeObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isInterse
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); fadeObs.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fade-in').forEach(el => fadeObs.observe(el));
+</script>
+</body>
+</html>
